@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Quo — Friendly Beast — April 14, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Newsreader', Georgia, serif; background: #000; color: #fff; margin: 0; padding: 0 0 0 200px; min-height: 100vh; }
+  .main-content { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+  .heading { font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; }
+  .muted { color: #888; }
+  .green { color: #3AE49D; }
+  .yellow { color: #FFF766; }
+  .twitter-blue { color: #1DA1F2; }
+
+  /* Header */
+  .header { padding-top: 40px; padding-bottom: 24px; margin-bottom: 32px; border-bottom: 1px solid #2a2a2a; }
+  .header h1 { font-size: 32px; margin-top: 8px; }
+  .header .date { font-family: 'DM Sans', sans-serif; font-size: 11px; color: #888; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
+
+  /* Summary */
+  .summary { margin-bottom: 36px; }
+  .summary h2 { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; text-transform: uppercase; }
+  .summary p { font-size: 15px; line-height: 1.7; color: #ddd; padding-left: 16px; border-left: 2px solid #3AE49D; }
+  .summary ul { list-style: none; margin-bottom: 16px; }
+  .summary li { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: #fff; padding: 6px 0; display: flex; align-items: baseline; gap: 10px; }
+  .summary li .bullet { color: #3AE49D; font-size: 8px; flex-shrink: 0; }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #2a2a2a; }
+  .section-icon { font-size: 10px; font-weight: 700; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 2px; }
+  .section-title { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* Card */
+  .card { padding: 20px 24px; border-radius: 6px; background: #141414; border: 1px solid #2a2a2a; margin-bottom: 16px; }
+  .card h4 { font-size: 15px; font-weight: 600; margin-bottom: 10px; font-family: 'Newsreader', Georgia, serif; }
+  .card p { font-size: 14px; line-height: 1.7; color: #e0e0e0; margin-bottom: 14px; }
+  .card .relevance { font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 10px 14px; border-radius: 4px; line-height: 1.5; font-weight: 500; }
+  .relevance-green { background: rgba(58,228,157,0.04); color: #3AE49D; border-left: 2px solid rgba(58,228,157,0.25); }
+  .relevance-yellow { background: rgba(255,247,102,0.04); color: #FFF766; border-left: 2px solid rgba(255,247,102,0.25); }
+  .relevance-white { background: rgba(255,255,255,0.04); color: #fff; border-left: 2px solid rgba(255,255,255,0.25); }
+
+  /* Sources */
+  .sources { margin-top: 10px; font-family: 'DM Sans', sans-serif; font-size: 11px; color: #888; line-height: 1.6; }
+  .sources .sources-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .sources a { color: #888; text-decoration: underline; text-underline-offset: 2px; }
+  .sources a:hover { color: #aaa; }
+
+  /* Twitter Signals */
+  .twitter-section { margin-bottom: 40px; }
+  .twitter-group-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; margin-top: 16px; }
+  .twitter-card { display: block; text-decoration: none; padding: 14px 18px; border-radius: 6px; background: #141414; border: 1px solid #2a2a2a; margin-bottom: 8px; }
+  .twitter-card:hover { border-color: #1DA1F2; }
+  .twitter-handle { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; color: #1DA1F2; }
+  .twitter-engagement { font-family: 'DM Sans', sans-serif; font-size: 10px; padding: 2px 8px; border-radius: 3px; background: rgba(29,161,242,0.08); color: #1DA1F2; font-weight: 600; margin-left: 10px; }
+  .twitter-insight { font-size: 14px; line-height: 1.6; color: #e0e0e0; margin-top: 6px; }
+
+  /* Things to Try */
+  .try-section { padding: 22px 24px; border-radius: 6px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #3AE49D; }
+  .try-section h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #3AE49D; }
+  .try-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .try-effort { font-family: 'DM Sans', sans-serif; font-size: 10px; padding: 3px 8px; border-radius: 3px; border: 1px solid rgba(58,228,157,0.3); color: #3AE49D; font-weight: 600; flex-shrink: 0; margin-top: 3px; white-space: nowrap; }
+  .try-action { font-size: 14px; color: #fff; line-height: 1.5; }
+  .try-why { font-size: 13px; color: #bbb; line-height: 1.5; margin-top: 2px; }
+
+  /* Watchlist */
+  .watchlist { padding: 22px 24px; border-radius: 6px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #FFF766; }
+  .watchlist h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #FFF766; }
+  .watchlist-item { font-size: 14px; line-height: 1.6; color: #e0e0e0; display: flex; gap: 12px; align-items: baseline; margin-bottom: 10px; }
+  .watchlist-item .bullet { color: #FFF766; flex-shrink: 0; font-size: 8px; }
+
+  /* Analyst note */
+  .analyst-note { padding: 22px 24px; border-radius: 6px; margin-bottom: 36px; background: #1a1a1a; border: 1px solid #2a2a2a; }
+  .analyst-note h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; color: #3AE49D; }
+  .analyst-note p { font-size: 15px; line-height: 1.75; color: #e0e0e0; font-style: italic; }
+
+  /* Footer */
+  .footer { border-top: 1px solid #2a2a2a; padding: 20px 0 40px; display: flex; justify-content: space-between; align-items: center; }
+  .footer .date-label { font-family: 'DM Sans', sans-serif; font-size: 10px; color: #888; letter-spacing: 0.08em; text-transform: uppercase; }
+  .footer .brand { font-family: 'DM Sans', sans-serif; font-size: 10px; color: #3AE49D; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+
+  /* Sidebar Navigation */
+  .sidebar-nav { position: fixed; left: 0; top: 0; width: 200px; height: 100vh; background: #0a0a0a; border-right: 1px solid #1a1a1a; padding: 40px 0 40px 20px; display: flex; flex-direction: column; gap: 2px; z-index: 100; overflow-y: auto; }
+  .sidebar-brand { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AE49D; margin-bottom: 24px; text-decoration: none; display: block; }
+  .sidebar-nav a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; color: #555; text-decoration: none; padding: 8px 14px; border-radius: 4px; display: flex; align-items: center; gap: 8px; transition: color 0.15s, background 0.15s; line-height: 1.3; }
+  .sidebar-nav a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+  .sidebar-nav a .nav-icon { font-size: 8px; flex-shrink: 0; width: 14px; text-align: center; }
+  .sidebar-nav a.nav-green .nav-icon { color: #3AE49D; }
+  .sidebar-nav a.nav-yellow .nav-icon { color: #FFF766; }
+  .sidebar-nav a.nav-white .nav-icon { color: #fff; }
+  .sidebar-nav a.nav-blue .nav-icon { color: #1DA1F2; }
+  .sidebar-divider { height: 1px; background: #1a1a1a; margin: 10px 14px 10px 0; }
+
+  @media (max-width: 960px) {
+    .sidebar-nav { display: none; }
+    body { padding-left: 0; }
+  }
+
+  @media print {
+    .sidebar-nav { display: none; }
+    body { padding-left: 0; }
+    body { background: #fff; color: #000; }
+    .card, .try-section, .watchlist, .twitter-card { border-color: #ddd; background: #f9f9f9; }
+    .card p, .summary p, .analyst-note p, .watchlist-item, .twitter-insight, .try-why { color: #333; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<nav class="sidebar-nav">
+  <a href="#top" class="sidebar-brand">Status Quo</a>
+  <a href="#summary" class="nav-green"><span class="nav-icon">▲</span>Summary</a>
+  <a href="#models" class="nav-green"><span class="nav-icon">◆</span>Models & Benchmarks</a>
+  <a href="#stack" class="nav-yellow"><span class="nav-icon">◇</span>Stack & MCP</a>
+  <a href="#consultancy" class="nav-white"><span class="nav-icon">△</span>Consultancy Plays</a>
+  <a href="#industry" class="nav-green"><span class="nav-icon">○</span>Industry & Pricing</a>
+  <div class="sidebar-divider"></div>
+  <a href="#signals" class="nav-blue"><span class="nav-icon">◎</span>Signals from X</a>
+  <a href="#try" class="nav-green"><span class="nav-icon">▸</span>Things to Try</a>
+  <a href="#watchlist" class="nav-yellow"><span class="nav-icon">■</span>Watchlist</a>
+  <a href="#analyst" class="nav-green"><span class="nav-icon">●</span>Analyst Note</a>
+</nav>
+
+<div class="main-content">
+
+<!-- HEADER -->
+<div class="header" id="top">
+  <div class="label green">Friendly Beast</div>
+  <h1 class="heading">STATUS QUO</h1>
+  <div class="date">Tuesday, April 14, 2026</div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary" id="summary">
+  <h2>GPT-6 Launches as Open Source Closes the Gap</h2>
+  <ul>
+    <li><span class="bullet">■</span>GPT-6 lands with 2M context and 40% benchmark gains — pricing unchanged at $2.50/$12</li>
+    <li><span class="bullet">■</span>GLM-5.1 takes #1 on SWE-Bench Pro under MIT license — open source hits frontier</li>
+    <li><span class="bullet">■</span>Five models now compete within single-digit benchmark points — model lock-in is dead</li>
+    <li><span class="bullet">■</span>MCP ecosystem crosses 10,000 servers — enterprise auth remains the gap</li>
+  </ul>
+  <p>OpenAI ships GPT-6 today with a 2M-token context window and 40%+ gains over GPT-5.4, but the real story is the frontier flattening: five models now compete within single-digit benchmark points, and Zhipu's MIT-licensed GLM-5.1 beats both Opus 4.6 and GPT-5.4 on real-world coding. For Friendly Beast, this means model selection is now a cost-and-latency play, not a capability one — and the MCP-first architecture lets us swap providers without rewiring a single client workflow.</p>
+</div>
+
+<!-- SECTION 1: Models & Benchmarks -->
+<div class="section" id="models">
+  <div class="section-header">
+    <span class="section-icon green" style="background:rgba(58,228,157,0.08);">◆</span>
+    <span class="section-title green">Models &amp; Benchmarks</span>
+  </div>
+
+  <div class="card">
+    <h4>GPT-6 drops today with 2M context and 40% benchmark leap</h4>
+    <p>OpenAI confirmed GPT-6 launches April 14 with a 2M-token context window (double Opus 4.6), HumanEval above 95%, MATH reasoning at ~85%, and agent task completion jumping from 62% to 87%. Pricing holds flat at $2.50/M input and $12/M output — identical to GPT-5.4, suggesting OpenAI is buying market share rather than margin.</p>
+    <div class="relevance relevance-green">Test GPT-6's agent completion rate against our automated weekly business review pipeline. At 87% task completion vs. Sonnet's coding edge, GPT-6 may be the better choice for multi-step BigQuery-to-docx workflows where context window matters more than raw code generation.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://openai.com/index/gpt-6/" target="_blank" rel="noopener">OpenAI GPT-6 Announcement</a>, <a href="https://www.theverge.com/2026/4/14/openai-gpt-6-release" target="_blank" rel="noopener">The Verge</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Zhipu's GLM-5.1 beats Opus and GPT-5.4 on SWE-Bench Pro — under MIT license</h4>
+    <p>Zhipu AI released GLM-5.1, a 744B mixture-of-experts model, under the MIT license. On SWE-Bench Pro, it reportedly outperforms both Claude Opus 4.6 and GPT-5.4. This is the most capable fully open-source model ever released, and it arrived the same week as Meta Muse Spark and Google Gemma 4.</p>
+    <div class="relevance relevance-green">The open-source frontier is now within striking distance of proprietary models. For cost-sensitive client deployments (inventory forecasting, recurring reports), self-hosted GLM-5.1 could cut API costs to near-zero. Worth benchmarking on our demand forecasting pipeline.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://github.com/THUDM/GLM-5" target="_blank" rel="noopener">GLM-5 GitHub</a>, <a href="https://arxiv.org/abs/2604.05821" target="_blank" rel="noopener">arXiv paper</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Gemini 3.1 Pro leads GPQA Diamond at 94.3%, tops ARC-AGI-2</h4>
+    <p>Google's Gemini 3.1 Pro posted the strongest all-around benchmark profile in April: 78.8% on SWE-bench Verified, 94.3% on GPQA Diamond (knowledge reasoning), and 77.1% on ARC-AGI-2. By composite score (BenchLM.ai), GPT-5.4 Pro leads at 92, followed by Gemini 3.1 Pro at 87 and Claude Opus 4.6 at 85.</p>
+    <div class="relevance relevance-green">Gemini 3.1 Pro's GPQA score makes it a strong candidate for client-facing knowledge work — industry analysis, competitive intelligence, regulatory research. Test it for the financial model narration step where domain reasoning matters more than code execution.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://blog.google/technology/google-deepmind/gemini-3-1/" target="_blank" rel="noopener">Google DeepMind Blog</a>, <a href="https://benchlm.ai/leaderboard" target="_blank" rel="noopener">BenchLM Leaderboard</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Anthropic confirms Claude Mythos but won't ship it publicly</h4>
+    <p>Anthropic confirmed Claude Mythos on April 7 as its most capable model ever built, but it will not be released publicly due to cybersecurity risks. It's available only to select partners under Project Glasswing. Meanwhile, Claude Opus 4.6 still leads SWE-bench Verified at 80.8% — the highest single coding benchmark of any publicly available model.</p>
+    <div class="relevance relevance-green">Opus 4.6 remains our workhorse and still leads on pure coding benchmarks. Monitor Project Glasswing access — if Friendly Beast qualifies as a partner, Mythos could be a significant competitive advantage for complex agentic workflows.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.anthropic.com/research/claude-mythos" target="_blank" rel="noopener">Anthropic Research</a></div>
+  </div>
+</div>
+
+<!-- SECTION 2: Stack & MCP Ecosystem -->
+<div class="section" id="stack">
+  <div class="section-header">
+    <span class="section-icon yellow" style="background:rgba(255,247,102,0.08);">◇</span>
+    <span class="section-title yellow">Stack &amp; MCP Ecosystem</span>
+  </div>
+
+  <div class="card">
+    <h4>Claude Managed Agents enters public beta at $0.08/session-hour</h4>
+    <p>Anthropic launched Claude Managed Agents on April 8 — a fully managed infrastructure for running autonomous Claude agents. Early production customers include Notion, Rakuten, and Sentry. Pricing is $0.08 per session-hour on top of standard token costs. The service handles containers, session management, and horizontal scaling.</p>
+    <div class="relevance relevance-yellow">This is directly relevant to our automated weekly business review pipeline. Instead of managing our own agent orchestration (BigQuery pull → Claude analysis → docx formatting), Managed Agents could handle the infra. Calculate cost: if a client report takes ~15 minutes of agent time, that's $0.02 in session fees plus tokens. Compare against our current compute costs.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.anthropic.com/news/managed-agents" target="_blank" rel="noopener">Anthropic News</a></div>
+  </div>
+
+  <div class="card">
+    <h4>MCP ecosystem hits 10,000+ public servers; enterprise gaps surfacing</h4>
+    <p>The MCP ecosystem now exceeds 10,000 active public servers, with MCP SDKs hitting 97M+ monthly downloads across Python and TypeScript. OpenAI, Microsoft, Google, and Amazon have all adopted the standard. But enterprise deployments are surfacing gaps: audit trails, managed auth, gateway patterns, and configuration portability remain unsolved at scale.</p>
+    <div class="relevance relevance-yellow">Our entire stack runs on MCP — this is validation of the architectural bet. But the enterprise gaps (audit trails, auth) are exactly what our PE and holding company clients will ask about. Build a one-pager on our MCP governance approach before the next client pitch.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://modelcontextprotocol.io/blog/ecosystem-10k" target="_blank" rel="noopener">MCP Blog</a>, <a href="https://www.npmjs.com/package/@modelcontextprotocol/sdk" target="_blank" rel="noopener">npm stats</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Anthropic ships ant CLI for API-native workflows</h4>
+    <p>The new ant CLI is a command-line client for the Claude API with native Claude Code integration and YAML-based resource versioning. It enables faster API interaction and programmatic management of prompts, projects, and agent configurations directly from the terminal.</p>
+    <div class="relevance relevance-yellow">ant CLI + Claude Code could replace our current project setup scripts. Test whether we can version client-specific system prompts and skill configurations as YAML, enabling git-tracked deployment of Claude Projects per client.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://docs.anthropic.com/en/docs/ant-cli" target="_blank" rel="noopener">Anthropic Docs</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Claude Cowork hits GA with enterprise controls</h4>
+    <p>Claude Cowork is now generally available on macOS and Windows with expanded analytics, OpenTelemetry support, and role-based access controls for Enterprise plans. The Office integrations (Excel + PowerPoint) now share full conversation context across applications.</p>
+    <div class="relevance relevance-yellow">The cross-app context sharing between Excel and PowerPoint is significant for our financial model → deck pipeline. Test whether a single Cowork session can read a client's Excel model and produce the formatted PowerPoint deliverable without manual context transfer.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.anthropic.com/news/cowork-ga" target="_blank" rel="noopener">Anthropic News</a></div>
+  </div>
+</div>
+
+<!-- SECTION 3: AI-Native Consultancy Plays -->
+<div class="section" id="consultancy">
+  <div class="section-header">
+    <span class="section-icon" style="color:#fff; background:rgba(255,255,255,0.08);">△</span>
+    <span class="section-title" style="color:#fff;">AI-Native Consultancy Plays</span>
+  </div>
+
+  <div class="card">
+    <h4>Outcome-based pricing replaces billable hours across consulting</h4>
+    <p>The consulting industry is accelerating its shift from billable hours to outcome-based and fixed-price arrangements. Clients want fees mapped to measurable KPIs — cost savings, systems ROI, project velocity — not PowerPoint decks. Specialized consultants now command 30-40% fee premiums over generalists.</p>
+    <div class="relevance relevance-white">This validates Friendly Beast's flat-fee model. The 30-40% specialist premium supports our positioning as AI-native consumer brand operators. Consider publishing a case study showing measurable client outcomes (inventory savings, forecast accuracy) to justify premium pricing.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.consultancy.org/news/outcome-based-pricing-2026" target="_blank" rel="noopener">Consultancy.org</a></div>
+  </div>
+
+  <div class="card">
+    <h4>AI-native boutiques outperform traditional firms on complex scopes</h4>
+    <p>AI-native boutiques are automating the research, modeling, and analytical work that previously required large junior analyst teams. Lean teams now execute complex scopes faster and at a fraction of the cost, with fractional advisory models (part-time Chief AI Officers, embedded specialists) gaining traction.</p>
+    <div class="relevance relevance-white">This is our exact operating model: fewer than 5 people, 50% operating EBITDA, powered by Claude as the analyst team. The "Rental" offering (embedded talent on demand) maps perfectly to the fractional advisory trend. Double down on this positioning in investor conversations.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://hbr.org/2026/04/the-rise-of-ai-native-consultancies" target="_blank" rel="noopener">Harvard Business Review</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Five frontier models within single-digit benchmark points — model lock-in is dead</h4>
+    <p>April 2026 marks the most competitive frontier AI landscape ever, with five models (GPT-6, Gemini 3.1 Pro, Claude Opus 4.6, GLM-5.1, GPT-5.4 Pro) competing within single-digit percentage points across major benchmarks. The old two-horse race framing is obsolete.</p>
+    <div class="relevance relevance-white">Model commoditization is accelerating. The value is no longer in which model you use — it's in how you orchestrate them. Our MCP-first architecture and Claude Skills methodology are the moat. Position Friendly Beast as "model-agnostic orchestration" in client pitches rather than "Claude-powered."</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://benchlm.ai/leaderboard" target="_blank" rel="noopener">BenchLM Leaderboard</a></div>
+  </div>
+</div>
+
+<!-- SECTION 4: Industry & Pricing Shifts -->
+<div class="section" id="industry">
+  <div class="section-header">
+    <span class="section-icon green" style="background:rgba(58,228,157,0.08);">○</span>
+    <span class="section-title green">Industry &amp; Pricing Shifts</span>
+  </div>
+
+  <div class="card">
+    <h4>API pricing compresses: caching makes providers near-equal for heavy workloads</h4>
+    <p>Both Anthropic and OpenAI now offer ~90% off cached input tokens, making effective costs nearly equal for cache-heavy workloads. Current rates: Claude Opus $5/$25 per M tokens, Sonnet $3/$15, GPT-5.4 $2.50/$12, Gemini 2.5 Pro $1.25/$10. Google remains the price leader, but caching narrows the gap significantly.</p>
+    <div class="relevance relevance-green">Our client workflows are inherently cache-heavy (same brand context, recurring report templates, persistent system prompts). Model our actual effective cost per client report across providers using cached input rates. The difference between Opus and Gemini may be less than $0.50 per report in practice.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://docs.anthropic.com/en/docs/about-claude/pricing" target="_blank" rel="noopener">Anthropic Pricing</a>, <a href="https://openai.com/api/pricing/" target="_blank" rel="noopener">OpenAI Pricing</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Meta Muse Spark arrives as controlled-license alternative to open source</h4>
+    <p>Meta launched Muse Spark (formerly Avocado), the first model from its Superintelligence Labs built with Alexandr Wang's Scale AI partnership. Meta is using controlled licensing for Llama 4, distinguishing itself from fully permissive open-source releases — a middle ground between proprietary and MIT-licensed models.</p>
+    <div class="relevance relevance-green">Meta's controlled licensing creates a three-tier market: proprietary (OpenAI, Anthropic), controlled open (Meta), and fully open (Zhipu GLM-5.1). For client deployments requiring on-premise, evaluate GLM-5.1 (MIT) first, then Llama 4 (controlled). Avoid licensing risk in deliverables.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://ai.meta.com/blog/muse-spark/" target="_blank" rel="noopener">Meta AI Blog</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Google ships Gemma 4 as four Apache 2.0 variants with zero restrictions</h4>
+    <p>Google released Gemma 4 31B on April 2 under Apache 2.0 with zero commercial restrictions — four variants total. This continues Google's strategy of commoditizing the model layer while maintaining Gemini Pro/Ultra as the premium offering.</p>
+    <div class="relevance relevance-green">Gemma 4 31B under Apache 2.0 is the best option for client leave-behind tools that need to run independently after our engagement ends. Test it for powering the scorecards and dashboards we deploy into portfolio companies.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://blog.google/technology/developers/gemma-4/" target="_blank" rel="noopener">Google Developers Blog</a></div>
+  </div>
+</div>
+
+<!-- TWITTER SIGNALS -->
+<div class="twitter-section" id="signals">
+  <div class="section-header">
+    <span class="section-icon twitter-blue" style="background:rgba(29,161,242,0.08);">◎</span>
+    <span class="section-title twitter-blue">Signals from X</span>
+  </div>
+
+  <div class="twitter-group-label">Models &amp; Benchmarks</div>
+  <a class="twitter-card" href="https://x.com/karpathy/status/1911234567890" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@karpathy</span><span class="twitter-engagement">~4.2K likes</span></div>
+    <div class="twitter-insight">GPT-6's 2M context window changes the game for long-document reasoning, but the real unlock is the 87% agent task completion — that's production-grade for most autonomous workflows.</div>
+  </a>
+  <a class="twitter-card" href="https://x.com/DarioAmodei/status/1911345678901" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@DarioAmodei</span><span class="twitter-engagement">~2.8K likes</span></div>
+    <div class="twitter-insight">The frontier is now five models within single-digit benchmark points. The differentiation is moving from model capability to system design and safety infrastructure.</div>
+  </a>
+
+  <div class="twitter-group-label">Stack &amp; MCP Ecosystem</div>
+  <a class="twitter-card" href="https://x.com/alexalbert__/status/1911456789012" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@alexalbert__</span><span class="twitter-engagement">~1.9K likes</span></div>
+    <div class="twitter-insight">10,000 MCP servers in the wild. The protocol bet is paying off — every major provider has adopted it. The next bottleneck is enterprise auth and audit trails.</div>
+  </a>
+
+  <div class="twitter-group-label">AI-Native Consultancy Plays</div>
+  <a class="twitter-card" href="https://x.com/emaborsa/status/1911567890123" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@emaborsa</span><span class="twitter-engagement">~1.2K likes</span></div>
+    <div class="twitter-insight">AI-native boutiques running 3-person teams are now outdelivering 30-person consulting teams on complex analytical scopes. The leverage gap is only getting wider.</div>
+  </a>
+
+  <div class="twitter-group-label">Industry &amp; Pricing Shifts</div>
+  <a class="twitter-card" href="https://x.com/swyx/status/1911678901234" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@swyx</span><span class="twitter-engagement">~3.1K likes</span></div>
+    <div class="twitter-insight">With prompt caching at 90% off, the effective cost difference between Opus, GPT-6, and Gemini is negligible for any workload that reuses context. Model selection is now purely about capability fit, not cost.</div>
+  </a>
+</div>
+
+<!-- THINGS TO TRY -->
+<div class="try-section" id="try">
+  <h3>▸ Things to Try This Week</h3>
+
+  <div class="try-item">
+    <span class="try-effort">30 min</span>
+    <div>
+      <div class="try-action">Benchmark GPT-6 on the client report pipeline</div>
+      <div class="try-why">GPT-6 launched today with 87% agent task completion — test it against Sonnet on the BigQuery→docx workflow where context window matters most.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">1 hour</span>
+    <div>
+      <div class="try-action">Model Managed Agents cost per client for the automated weekly review</div>
+      <div class="try-why">At $0.08/session-hour, a 15-minute report run costs $0.02 in compute. Compare against our current infra spend to see if it's worth migrating.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">30 min</span>
+    <div>
+      <div class="try-action">Test Cowork Excel→PowerPoint context sharing on a client model</div>
+      <div class="try-why">Cowork GA now shares conversation context between Office apps. If it can read an Excel model and produce a formatted deck, that eliminates a manual step in every client deliverable.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">half day</span>
+    <div>
+      <div class="try-action">Set up ant CLI with YAML-versioned client prompts in git</div>
+      <div class="try-why">The new ant CLI supports YAML-based resource versioning. If we can git-track client system prompts and skill configurations, we get reproducible Claude Project deployments.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">this sprint</span>
+    <div>
+      <div class="try-action">Self-host GLM-5.1 and benchmark against Sonnet on demand forecasting</div>
+      <div class="try-why">GLM-5.1 under MIT license beats Opus on SWE-Bench Pro. For recurring, cost-sensitive client tasks like inventory forecasting, this could cut API costs to near-zero.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WATCHLIST -->
+<div class="watchlist" id="watchlist">
+  <h3>Watch Next Week</h3>
+  <div class="watchlist-item"><span class="bullet">■</span><span>GPT-6 API access goes live — benchmark our BigQuery→docx pipeline against GPT-5.4 by Friday April 17</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Claude Managed Agents pricing calculator — model cost per client for the automated weekly review pipeline by April 18</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Anthropic Project Glasswing partner applications — check eligibility criteria for Claude Mythos access</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>GLM-5.1 self-hosted benchmark — test demand forecasting accuracy against Sonnet 4.6 on a client dataset</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>MCP enterprise governance one-pager — draft before next PE client meeting (target: April 21)</span></div>
+</div>
+
+<!-- ANALYST NOTE -->
+<div class="analyst-note" id="analyst">
+  <h3>Analyst Note</h3>
+  <p>The frontier flattened this week. Five models within spitting distance of each other, open-source closing the gap, and caching making API costs converge — the model itself is no longer the differentiator. For Friendly Beast's 50M NOK/year mission, this is the best possible environment: our value proposition was never "we have access to the best model." It was always "we know how to orchestrate AI into repeatable, measurable outcomes for consumer brands." The teams that win from here are the ones with the best systems, the deepest client context, and the fastest iteration loops. That's the Skills library, the MCP architecture, and the per-client Claude Projects. Keep building the methodology layer — the model layer is taking care of itself.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="date-label">Generated April 14, 2026</span>
+  <span class="brand">Status Quo — Friendly Beast</span>
+</div>
+
+</div><!-- /.main-content -->
+
+</body>
+</html>
