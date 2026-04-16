@@ -371,28 +371,28 @@
 <div class="commands-section" id="commands">
   <h3>⌘ Commands Worth Knowing</h3>
   <div class="command-item">
-    <span class="command-label">claude mcp add bigquery</span>
-    <span class="command-desc">Register Google's official BigQuery MCP server in your Claude Code session. First step to querying client datasets directly from the terminal without a custom connector.</span>
+    <span class="command-label">/schedule</span>
+    <span class="command-desc">Create a scheduled remote agent that runs on a cron. This newsletter was built by one — no local machine required.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">bq ls --project_id=PROJECT_ID</span>
-    <span class="command-desc">List all datasets in a BigQuery project. Run this immediately after connecting the MCP server to confirm Claude can see the schema you want to expose.</span>
+    <span class="command-label">/resume</span>
+    <span class="command-desc">Pick up your last Claude Code session exactly where you left off — context, files, and tool state intact.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">claude mcp add slack</span>
-    <span class="command-desc">Connect Slack's now-GA MCP server to your session. Enables real-time channel search, thread reads, and message drafting — all agent-native without OAuth setup.</span>
+    <span class="command-label">/review</span>
+    <span class="command-desc">Run a full code review on the current pull request. Catches issues before your teammates have to.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">claude --resume</span>
-    <span class="command-desc">Resume your last Claude Code session with full context, open files, and tool state intact. Essential now that parallel sessions are live — don't recreate context you already built.</span>
+    <span class="command-label">/init</span>
+    <span class="command-desc">Generate a CLAUDE.md file for your project — gives Claude persistent context about your codebase and conventions.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">bq query --format=csv --max_rows=1000 'SQL'</span>
-    <span class="command-desc">Export BigQuery results as CSV directly to the terminal. Pipe the output to Claude Code for on-the-fly analysis without opening a browser or a notebook.</span>
+    <span class="command-label">/context</span>
+    <span class="command-desc">Show how much of the context window you've used and what's consuming it. Essential for long sessions.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">gh run watch</span>
-    <span class="command-desc">Stream a GitHub Actions run in real time from the terminal. Use this when a Claude Code session triggers CI — watch the pipeline without leaving the shell.</span>
+    <span class="command-label">/compact</span>
+    <span class="command-desc">Compress the conversation to free up context space without losing key information. Use before you hit the wall.</span>
   </div>
 </div>
 
