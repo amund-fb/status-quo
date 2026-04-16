@@ -9,3 +9,12 @@ package-lock.json
 Claude Project/
 BRAND_Friendly-Beast_2026_Visual-Identity-Guidelines-V01.pdf
 BLUEPRINT_Friendly-Beast_2026-04-14_AI-Analyst-System.html
+
+# Internal docs — kept local only, not on GitHub
+CLAUDE.md
+about-friendly-beast.md
+newsletter-writing-guide.md
+3-systems-framework.md
+file-naming-convention.md
+PROJECT-INSTRUCTIONS.md
+README.md
