@@ -146,14 +146,14 @@
 
 <!-- SUMMARY -->
 <div class="summary" id="summary">
-  <h2>Claude Code Goes Agentic as PE Firms Pivot to AI-Driven Value Creation</h2>
+  <h2>Claude Code Rebuilt. BigQuery Gets MCP. PE Firms Pivot to Ops.</h2>
   <ul>
-    <li><span class="bullet">■</span>Claude Code Routines run cloud-side — scheduled, GitHub-triggered automations with no local machine required</li>
-    <li><span class="bullet">■</span>Qwen 3 (0.6B–72B MoE, April 8): 32B variant matches GPT-4o on reasoning, runs on a single GPU</li>
-    <li><span class="bullet">■</span>S&P Global 2026 PE survey: 72% of GPs name operational improvement as top value creation lever</li>
-    <li><span class="bullet">■</span>Notion 3.4 ships MCP enhancements, private-Slack Custom Agents, and Calendar/Mail integration</li>
+    <li><span class="bullet">■</span>Anthropic ships redesigned Claude Code with parallel sessions, integrated terminal, and scheduled Routines</li>
+    <li><span class="bullet">■</span>Google launches official MCP servers for BigQuery and Google Workspace — data-access friction eliminated</li>
+    <li><span class="bullet">■</span>Slack MCP server and Real-Time Search API reach GA — conversational data now natively agent-ready</li>
+    <li><span class="bullet">■</span>S&P Global survey: 71% of PE fund managers now prioritise operational efficiency over financial engineering</li>
   </ul>
-  <p>Anthropic redesigned Claude Code this week around parallel sessions and cloud-hosted Routines — automations that bundle a prompt, a repo, and connectors into a single config running on Anthropic's infrastructure without a local machine, triggered by schedule, API call, or GitHub event. Simultaneously, Alibaba's Qwen 3 and Meta's Llama 4 MoE models delivered frontier-class reasoning at local-deployment scale for the first time. The timing aligns with a structural signal: S&P Global's April 13 PE survey found 72% of general partners now name operational improvement — not financial engineering — as their top value creation lever. For Status Quo, Claude Code Routines collapse the distance between "AI capability" and "client deliverable": the same tool that writes code can now run the weekly business review while you sleep.</p>
+  <p>Anthropic rebuilt Claude Code from scratch this week — parallel sessions, a drag-and-drop layout, integrated terminal, rebuilt diff viewer, and a Routines feature for scheduled automations. Simultaneously, Google shipped official MCP servers for BigQuery and Google Workspace, Slack made its MCP server and Real-Time Search API generally available, and Notion 3.4 added Workers functions and Calendar/Mail/Slack cross-app access. For practitioners running client work on this stack, the data-access friction layer just collapsed. The timing aligns with a PE industry pivot: 71% of fund managers now rank operational improvement over financial engineering — and AI-enabled operating partners are positioned to capture that demand.</p>
 </div>
 
 <!-- SECTION 1: Models & Benchmarks -->
@@ -164,24 +164,24 @@
   </div>
 
   <div class="card">
-    <h4>Qwen 3 lands April 8: 32B MoE matches GPT-4o locally, family spans 0.6B to 72B</h4>
-    <p>Alibaba released Qwen 3 on April 8 across a full model family from 0.6B to 72B parameters, all using mixture-of-experts architecture. Qwen 3 32B running locally matches or beats GPT-4o on several reasoning benchmarks — the first time a locally-deployable open model has crossed that threshold. The 0.6B variant runs entirely on-device with no internet connection required.</p>
-    <div class="relevance relevance-green">For clients requiring data residency or on-premise AI — common in Norwegian PE portfolio companies handling sensitive operational data — Qwen 3 32B is the first credible local option for complex reasoning tasks. Test it on demand forecasting and financial narrative generation before recommending cloud alternatives.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.digitalapplied.com/blog/open-source-ai-landscape-april-2026-gemma-qwen-llama" target="_blank" rel="noopener">Digital Applied: Open Source AI Landscape</a>, <a href="https://fazm.ai/blog/llm-releases-april-2026" target="_blank" rel="noopener">Fazm: LLM Releases April 2026</a></div>
+    <h4>Claude Code rebuilt: parallel sessions, integrated terminal, Routines in research preview</h4>
+    <p>Anthropic released a redesigned Claude Code desktop app on April 14–15, adding a parallel sessions sidebar (filter by status, project, or environment), drag-and-drop workspace layout, integrated terminal, rebuilt diff viewer for large changesets, and an expanded preview pane. A new Routines feature — scheduled, repeatable automations that run offline on Mac — launched in research preview. Claude Cowork is now generally available on macOS and Windows.</p>
+    <div class="relevance relevance-green">Parallel sessions mean running client report generation, code review, and data pipeline work simultaneously without context bleed. Test Routines for the automated weekly business review trigger — it could replace the current cron job with a native Claude Code schedule. The offline capability removes the connectivity dependency from time-sensitive client deliverables.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://9to5mac.com/2026/04/14/anthropic-adds-repeatable-routines-feature-to-claude-code-heres-how-it-works/" target="_blank" rel="noopener">9to5Mac</a>, <a href="https://www.macrumors.com/2026/04/15/anthropic-rebuilds-claude-code-desktop-app/" target="_blank" rel="noopener">MacRumors</a></div>
   </div>
 
   <div class="card">
-    <h4>Meta Llama 4: Scout (109B/17B active) and Maverick (400B/17B active) ship as open MoE</h4>
-    <p>Meta released Llama 4 Scout and Maverick on April 5 as open-source mixture-of-experts models. Scout activates 17B of 109B parameters; Maverick activates 17B of 400B. The MoE design means both fit on a single H100 GPU while performing at near-frontier levels. Five of the six major open-source releases in April use MoE architecture — it is now the dominant pattern.</p>
-    <div class="relevance relevance-green">For PE portfolio clients evaluating in-house AI infrastructure, the economics have shifted materially. Frontier-class reasoning now fits on a single accelerator. Update our infrastructure recommendation template to reflect MoE as the default open-source architecture when advising on PortCo AI buildouts.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://fazm.ai/blog/new-ai-model-releases-open-source-projects-april-2026" target="_blank" rel="noopener">Fazm: New AI Model Releases April 2026</a>, <a href="https://www.buildfastwithai.com/blogs/latest-ai-models-april-2026" target="_blank" rel="noopener">Build Fast with AI</a></div>
+    <h4>Qwen 3 family: 0.6B–235B open weights — 9B model scores 81.7% on GPQA Diamond</h4>
+    <p>Alibaba released Qwen 3 this week, ranging from 0.6B to 235B parameters with open weights available from 0.6B through 72B. Qwen 3.5 9B scores 81.7% on GPQA Diamond — outperforming OpenAI's 120B open-weight model. Six labs now ship competitive open-weight models that match proprietary alternatives on key benchmarks: Google Gemma 4, Alibaba Qwen 3, Meta Llama 4, Mistral Small 4, OpenAI gpt-oss-120B, and Zhipu GLM-5.</p>
+    <div class="relevance relevance-green">A 9B model matching or beating 120B models on domain reasoning changes the cost calculus for high-frequency tasks. Evaluate Qwen 3.5 9B for the brand intelligence summarisation layer — if it matches Claude Sonnet on GPQA-class reasoning at a fraction of the API cost, the economics of recurring client deliverables improve significantly.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://fazm.ai/blog/llm-releases-april-2026" target="_blank" rel="noopener">Fazm AI</a>, <a href="https://www.buildfastwithai.com/blogs/latest-ai-models-april-2026" target="_blank" rel="noopener">Build Fast with AI</a></div>
   </div>
 
   <div class="card">
-    <h4>OpenAI raises $122B, ships GPT-5.3 Instant Mini and $100/mo Pro plan within two weeks</h4>
-    <p>OpenAI raised $122 billion on April 2 and the same day launched Codex with pay-as-you-go pricing for teams. On April 9 it released GPT-5.3 Instant Mini — a smarter fallback model with stronger writing and contextual awareness — and a $100/month Pro plan giving unlimited GPT-5.4 access and up to 10x more Codex usage than Plus. The new Pro plan is positioned for high-intensity coding sessions, not general use.</p>
-    <div class="relevance relevance-green">OpenAI's Codex pay-as-you-go pricing creates a direct comparison point for Claude Code Routines. Both are now priced for production agent workloads, not experimentation. Calculate which platform is cheaper for our specific weekly automation patterns — Codex charges per task, Routines charge per session-hour on Claude infrastructure.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.ibtimes.com.au/chatgpt-april-2026-update-openai-rolls-out-gpt-53-instant-mini-100-pro-plan-amid-growing-1866545" target="_blank" rel="noopener">IBT: ChatGPT April 2026 Update</a>, <a href="https://releasebot.io/updates/openai" target="_blank" rel="noopener">OpenAI Release Notes</a></div>
+    <h4>GPT-5.4 ships with native computer-use; OpenAI launches $100/month Pro plan for Codex</h4>
+    <p>GPT-5.4 is the first OpenAI general-purpose model with native, state-of-the-art computer-use capabilities — enabling agents to operate computers and carry out complex workflows across applications without plugins or custom integrations. A new $100/month Pro plan targets heavy Codex sessions: unlimited GPT-5.4 access, GPT-5.4 Pro, and up to 10x more Codex usage than the Plus tier. OpenAI also launched GPT-5.4-Cyber with tiered access for verified security teams.</p>
+    <div class="relevance relevance-green">Native computer-use in a general-purpose model is the clearest signal that agentic workflows are moving from prototype to product. Evaluate GPT-5.4 for portfolio company handoff tasks — automated data entry, navigation of legacy systems with no API, or report generation inside tools we cannot instrument. The $100 Pro plan is worth modelling against current Codex usage if Claude Code concurrency is a constraint.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.ibtimes.com.au/chatgpt-april-2026-update-openai-rolls-out-gpt-53-instant-mini-100-pro-plan-amid-growing-1866545" target="_blank" rel="noopener">IBTimes</a>, <a href="https://openai.com/index/scaling-trusted-access-for-cyber-defense/" target="_blank" rel="noopener">OpenAI</a></div>
   </div>
 </div>
 
@@ -193,24 +193,24 @@
   </div>
 
   <div class="card">
-    <h4>Claude Code redesigned: parallel sessions sidebar and cloud-hosted Routines with GitHub triggers</h4>
-    <p>Anthropic released a redesigned Claude Code desktop app (April 14–15) with a new sidebar for managing parallel sessions, drag-and-drop workspace layout, and Routines — automations that bundle a prompt, a repo, and connectors into a single config. Routines run on Claude Code's cloud infrastructure; a local machine does not need to be online. They fire on a schedule, from an API call, or off a GitHub event such as a new pull request. Claude Cowork is now generally available on macOS and Windows.</p>
-    <div class="relevance relevance-yellow">This is the most operationally significant release for Status Quo this week. A Routine could replace the manual trigger step in our weekly BigQuery→Claude→Notion report cycle. Set up a test Routine against one client's data stack and wire it to a GitHub merge event to validate the trigger mechanism before rolling out across clients.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://9to5mac.com/2026/04/14/anthropic-adds-repeatable-routines-feature-to-claude-code-heres-how-it-works/" target="_blank" rel="noopener">9to5Mac: Claude Code Routines</a>, <a href="https://www.macrumors.com/2026/04/15/anthropic-rebuilds-claude-code-desktop-app/" target="_blank" rel="noopener">MacRumors: Claude Code Desktop App</a></div>
+    <h4>Google launches official BigQuery and Google Services MCP servers — fully managed, remote</h4>
+    <p>Google this week announced fully managed, remote MCP servers for Google services. The BigQuery MCP server enables agents to interpret schemas, execute queries against enterprise datasets, and access BigQuery's forecasting features — with data governed in-place. Official MCP servers now cover the full Google Workspace suite alongside BigQuery, removing the need for custom OAuth connectors or intermediary layers.</p>
+    <div class="relevance relevance-yellow">This directly eliminates the custom connector work currently required to give Claude access to BigQuery client data. Connect the BigQuery MCP server to Claude Code this week and test schema introspection against a client dataset. The in-place governance model satisfies the data residency requirements that have blocked some PE clients from granting API access entirely.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services" target="_blank" rel="noopener">Google Cloud Blog</a></div>
   </div>
 
   <div class="card">
-    <h4>Notion 3.4 (April 14): private-Slack Custom Agents, MCP admin controls, Calendar and Mail integration</h4>
-    <p>Notion 3.4 ships MCP improvements enabling AI tools to work reliably across comments, meeting transcripts, and Notion Sites — with faster responses and new admin controls including auditing and approved-tool lists. Custom Agents can now operate inside private Slack channels. Notion also gains Calendar, Mail, and Slack integrations so agents can read, summarize, and act across those tools from within a single Notion context. A developer preview opens code execution inside AI agents.</p>
-    <div class="relevance relevance-yellow">If your Notion workspace holds client project plans and meeting notes, a Claude agent can now read a Notion transcript, surface action items in a private Slack channel, and update a project timeline — without manual handoff. Test this on the next client onboarding kickoff to reduce post-meeting admin from 45 minutes to a single Routine.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.notion.com/releases/2026-04-14" target="_blank" rel="noopener">Notion Release Notes 3.4</a>, <a href="https://fazm.ai/blog/notion-updates-april-2026-new-features" target="_blank" rel="noopener">Fazm: Notion April 2026 Updates</a></div>
+    <h4>Slack MCP server and Real-Time Search API reach GA — agent-ready conversational access</h4>
+    <p>Slack launched its MCP server and Real-Time Search (RTS) API into general availability, providing agents with secure, context-aware access to Slack workspace data. The RTS API enables search across channels, threads, and attachments in real time without custom OAuth integrations. Both tools are designed for agent-native workflows and support the MCP authentication model for session-scoped access.</p>
+    <div class="relevance relevance-yellow">With Slack MCP plus BigQuery MCP plus Claude Code, the full client context loop closes natively in a single session. Agents can read Slack discussion threads, query BigQuery for supporting data, and draft structured outputs — without manual context transfer between tools. Test the RTS API for competitive intelligence summarisation across a client's brand monitoring channel.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://slack.com/blog/news/mcp-real-time-search-api-now-available" target="_blank" rel="noopener">Slack Blog</a>, <a href="https://slack.com/blog/news/powering-agentic-collaboration" target="_blank" rel="noopener">Slack Agentic Platform</a></div>
   </div>
 
   <div class="card">
-    <h4>Google expands managed MCP to BigQuery, Looker, Pub/Sub, and Kafka</h4>
-    <p>Google Cloud is extending its managed MCP server support — introduced for BigQuery and Google Maps at end-2025 — to Looker, Database Migration Service, BigQuery Migration Service, Memorystore, Pub/Sub, and Kafka. Managed MCP means Google handles auth, scaling, and session state; developers connect via a standard MCP endpoint without building custom integrations. Slack's new Real-Time Search API and MCP server ship in parallel, giving agents structured access to conversational history.</p>
-    <div class="relevance relevance-yellow">BigQuery MCP going managed removes the last infrastructure friction point from our data stack. Our client analytics pipeline (BigQuery → Claude → Notion report) can now run fully through managed MCP endpoints, cutting the custom connector code we currently maintain. Test the managed BigQuery MCP endpoint against our existing integration this week.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://cloud.google.com/blog/products/databases/managed-mcp-servers-for-google-cloud-databases" target="_blank" rel="noopener">Google Cloud: Managed MCP Servers</a>, <a href="https://slack.com/blog/news/powering-agentic-collaboration" target="_blank" rel="noopener">Slack: Powering Agentic Collaboration</a></div>
+    <h4>Notion 3.4: Workers functions, Calendar/Mail/Slack integration, faster MCP with admin controls</h4>
+    <p>Notion released version 3.4 on April 14 with three meaningful changes for agent-based workflows. Workers are JavaScript/TypeScript functions that Notion AI agents can invoke to run real queries, calculations, and API calls — replacing approximated answers from visible text. New integrations connect Calendar, Mail, and Slack, allowing agents to read, summarise, and act across daily tools. MCP improvements add faster responses and new admin controls including auditing and approved-tool lists.</p>
+    <div class="relevance relevance-yellow">Workers functions make Notion AI a genuine computation layer. For client-facing dashboards, a Worker can now pull live data and run calculations inside Notion without a separate Python pipeline. Test with one client's weekly KPI summary — build the Worker, trigger it via MCP, and see if it replaces the current scripted export. The n8n MCP integration also enables connecting Notion agents to broader automation workflows without custom code.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.notion.com/releases/2026-04-14" target="_blank" rel="noopener">Notion Releases</a>, <a href="https://developers.notion.com/docs/mcp-supported-tools" target="_blank" rel="noopener">Notion MCP Docs</a></div>
   </div>
 </div>
 
@@ -222,24 +222,24 @@
   </div>
 
   <div class="card">
-    <h4>AI consulting market: $11B in 2026 to $91B by 2035 — boutiques gaining on Big Four</h4>
-    <p>The AI consulting services market is on a 26.2% CAGR trajectory, rising from $11.07 billion in 2026 to $90.99 billion by 2035. The Big Four and top strategy houses have collectively spent over $10 billion on AI initiatives since 2023. Despite the investment, new competition from boutiques and startups is gaining ground — firms not burdened by legacy delivery models and billing structures can move faster and charge less for the same analytical output.</p>
-    <div class="relevance relevance-white">At 26.2% CAGR, this market grows faster than almost any other professional services category. Status Quo's flat-fee, AI-native model is structurally positioned to capture a disproportionate share of the boutique tier. Quantify the delivery speed delta versus a Big Four AI team on a comparable consumer brand engagement and use it in the next investor deck.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://futureofconsulting.ai/ai-leadership/2026-consultings-ai-revolution-update/" target="_blank" rel="noopener">Future of Consulting: 2026 Update</a>, <a href="https://www.ishir.com/blog/320185/ai-native-enterprise-transformation-from-experimentation-to-scalable-impact-in-2026.htm" target="_blank" rel="noopener">ISHIR: AI-Native Enterprise 2026</a></div>
+    <h4>Anthropic captures 40% of enterprise LLM API spend — OpenAI drops from 50% to 27%</h4>
+    <p>Anthropic now holds 40% of enterprise LLM API spend, up from a marginal position two years ago. OpenAI's share has fallen from 50% in 2023 to 27% today. Every major AI vendor is now forming partnerships with system integrators and consulting firms to deploy this technology, a signal that the market is shifting from experimentation to institutional rollout at scale.</p>
+    <div class="relevance relevance-white">The market share inversion confirms that enterprise operators who built early on Claude have been validated by the broader market. Claude MCP fluency and deep familiarity with the Anthropic toolchain are now differentiators in pitches to clients running vendor due diligence. Lead with Anthropic's enterprise momentum in the next new business conversation.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://futureofconsulting.ai/ai-leadership/2026-consultings-ai-revolution-update/" target="_blank" rel="noopener">Future of Consulting</a></div>
   </div>
 
   <div class="card">
-    <h4>Kyndryl launches Agentic Service Management: maturity model + blueprints for enterprise AI transition</h4>
-    <p>Kyndryl launched its Agentic Service Management product in April 2026, combining a maturity model, structured assessments, and implementation blueprints to move enterprises from traditional service operations to autonomous, intelligent workflows at scale. The product signals that large IT service firms are now packaging "how to operationalize AI agents" as a billable service — structuring the market that boutiques currently navigate without a formal framework.</p>
-    <div class="relevance relevance-white">Kyndryl's move is a reference point for positioning: Status Quo delivers what Kyndryl sells, but for consumer brand operators rather than IT infrastructure teams. The maturity model concept is worth borrowing — a published "AI Readiness Assessment" for PE-backed consumer brands would differentiate us in deal sourcing conversations and give PE clients a structured entry point.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.prnewswire.com/news-releases/kyndryl-launches-agentic-service-management-to-power-ai-native-infrastructure-services-and-intelligent-workflows-302731945.html" target="_blank" rel="noopener">PR Newswire: Kyndryl Agentic Service Management</a></div>
+    <h4>AI consulting market: $11B in 2026 — projected $91B by 2035 at 26.2% CAGR</h4>
+    <p>The AI consulting services market is forecast to grow from $11.07B in 2026 to $90.99B by 2035, a 26.2% CAGR. By end of 2026, 40% of business applications are expected to use AI agents, up from under 5% in 2025. The largest consulting firms have invested over $10 billion in AI since 2023 but have largely failed to change how they actually make money and deliver value — leaving structural opportunity for specialised operators.</p>
+    <div class="relevance relevance-white">At a 26.2% CAGR, the AI services market doubles roughly every three years. The operational question is whether to deepen the consumer brand niche — where differentiation is clearer — or begin building adjacent playbooks for adjacent sectors before the market gets crowded. The window for establishing a defensible position in a specific vertical is still open; it will not be in 18 months.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://futureofconsulting.ai/ai-leadership/2026-consultings-ai-revolution-update/" target="_blank" rel="noopener">Future of Consulting</a>, <a href="https://algoscale.com/blog/top-ai-consulting-companies/" target="_blank" rel="noopener">Algoscale</a></div>
   </div>
 
   <div class="card">
-    <h4>2026 is "the year agents shine" — but only for firms with systems, not just models</h4>
-    <p>Multiple consultancies — PwC, BCG, FTI — align on 2026 as the inflection year for agentic AI delivery in enterprise services. The common qualifier: execution requires organizational readiness, not just model access. Companies that built repeatable AI playbooks and infrastructure patterns in 2024–2025 are now deploying across multiple clients simultaneously. Those that remained in pilot mode are accelerating to catch up, creating a two-speed market.</p>
-    <div class="relevance relevance-white">The two-speed market is the Status Quo opportunity. PE portfolio companies still in pilot mode need an operating partner who already has the playbooks. Our Claude Code Routines infrastructure, MCP architecture, and per-client Claude Projects represent exactly the "built 2024–2025, deploying now" advantage the analysts describe. Document and market the methodology explicitly, not just the outcomes.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-predictions.html" target="_blank" rel="noopener">PwC: 2026 AI Business Predictions</a>, <a href="https://www.fticonsulting.com/insights/reports/2026-private-equity-ai-radar" target="_blank" rel="noopener">FTI: 2026 Private Equity AI Radar</a></div>
+    <h4>ServiceNow opens Build Agent skills to developers April 15 — PE portfolio ITSM now agentic</h4>
+    <p>ServiceNow launched Build Agent skills in general availability on April 15, enabling developers to build agentic capabilities using familiar tools and deploy them directly to the ServiceNow platform. This extends the agentic software ecosystem into enterprise IT service management — a large, underserved category for AI-native players, with significant PE portfolio company exposure.</p>
+    <div class="relevance relevance-white">PE portfolio companies running ServiceNow can now receive AI-native upgrades through existing contracts without a new vendor relationship. Flag this for PE clients with ServiceNow seats — there may be budget for agentic ITSM under current licences. This is the kind of high-leverage, low-friction upgrade that justifies an operating partner conversation.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-moves-beyond-the-sidecar-AI-era-giving-customers-a-complete-AI-native-experience-across-all-products-and-packages/default.aspx" target="_blank" rel="noopener">ServiceNow Newsroom</a></div>
   </div>
 </div>
 
@@ -251,24 +251,24 @@
   </div>
 
   <div class="card">
-    <h4>S&P Global 2026 PE survey (April 13): 72% of GPs name operational improvement as top value lever</h4>
-    <p>S&P Global Market Intelligence published its 2026 Private Equity Survey on April 13 with a clear pivot: 60% of GPs say higher capital costs are forcing greater focus on portfolio company operational performance, and 72% now rank operational improvements as their top value creation lever. Fundraising confidence is rising. The implication is structural — financial engineering is no longer sufficient, and operational AI is the implementation layer GPs are reaching for.</p>
-    <div class="relevance relevance-green">This is the clearest demand signal for Status Quo's core offering. PE GPs are now mandating operational improvement at the PortCo level — which means our AI-native operating partner model is no longer a "nice to have" add-on but a response to LP pressure. Use the 72% statistic as the opening frame in every PE intro meeting this quarter.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://press.spglobal.com/2026-04-13-S-P-Global-Market-Intelligences-2026-Private-Equity-Survey-Shows-Fundraising-Confidence-Rising-as-Managers-Pivot-to-Operational-Value" target="_blank" rel="noopener">S&P Global: 2026 PE Survey</a>, <a href="https://hedgeco.net/news/04/2026/the-operational-pivot-sp-globals-2026-private-equity-survey.html" target="_blank" rel="noopener">HedgeCo: The Operational Pivot</a></div>
+    <h4>S&P Global PE survey: 71% of fund managers pivot to operational efficiency over financial engineering</h4>
+    <p>S&P Global Market Intelligence's 2026 private equity survey (April 13) found that 71% of PE fund managers now prioritise operational improvements over financial engineering amid economic uncertainty. AI integration remains early-stage: due diligence shows the highest adoption rate (31% somewhat or fully integrated), while majorities rate AI as ineffective for deal sourcing (64%) and portfolio monitoring (75%). Key barriers: lack of expertise (49%), data privacy concerns (43%), model accuracy concerns (38%).</p>
+    <div class="relevance relevance-green">This is the clearest demand signal of the week. PE firms are explicitly pivoting to operational value creation and are not yet satisfied with their AI tooling for monitoring and sourcing. That gap is the engagement. Bring the S&P data into the next PE client conversation and frame the ask: which portfolio companies have no systematic AI in their operations today?</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://press.spglobal.com/2026-04-13-S-P-Global-Market-Intelligences-2026-Private-Equity-Survey-Shows-Fundraising-Confidence-Rising-as-Managers-Pivot-to-Operational-Value" target="_blank" rel="noopener">S&P Global</a></div>
   </div>
 
   <div class="card">
-    <h4>Schneider Electric (April 15): 95% of CPG manufacturers say AI reduces annual operating costs</h4>
-    <p>A Schneider Electric study published April 15 found CPG manufacturers are bracing for mounting production losses and view industrial AI as a critical competitiveness lever by 2030. 95% of CPG leaders report that AI reduces annual operating costs, providing a buffer against supply chain volatility and labor constraints. The gap between AI-adopting and AI-lagging CPG brands is widening at every major KPI — cost, service level, and forecast accuracy.</p>
-    <div class="relevance relevance-green">Consumer brand clients need a concrete number when justifying AI investment to their PE owners. 95% of CPG peers report cost reduction — that is the benchmark to set expectations against. Incorporate this into client onboarding materials: our engagement should produce a measurable cost reduction within 90 days, not a pilot report.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.globenewswire.com/news-release/2026/04/15/3274128/0/en/CPG-manufacturers-brace-for-mounting-production-losses-and-see-industrial-AI-as-a-critical-competitiveness-lever-by-2030-Schneider-Electric-study-finds.html" target="_blank" rel="noopener">GlobeNewswire: Schneider Electric CPG Study</a></div>
+    <h4>CPG AI reality check: 71% adoption claimed, only 13% embedded end-to-end — Schneider Electric study</h4>
+    <p>A Schneider Electric study published April 15 found that just 13% of CPG manufacturers have AI embedded end-to-end in core operations today, despite 71% of CPG leaders reporting AI adoption overall. By 2030, 37% expect AI to be core to operations. CPG companies report average revenue increases of 69% among those with genuine AI integration, but the 58-percentage-point gap between adoption and operational embedding represents the execution failure — not a technology gap.</p>
+    <div class="relevance relevance-green">This data sharpens the client pitch. Consumer brand operators claim AI adoption but almost none have it in supply chain, forecasting, or pricing workflows. The question to ask in client conversations is not "do you use AI?" — it is "is AI making decisions in your core operations?" For CPG portfolio companies, the answer is almost always no, and the 2x ROIC data from BCG makes the ROI case.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.globenewswire.com/news-release/2026/04/15/3274128/0/en/CPG-manufacturers-brace-for-mounting-production-losses-and-see-industrial-AI-as-a-critical-competitiveness-lever-by-2030-Schneider-Electric-study-finds.html" target="_blank" rel="noopener">GlobeNewswire</a>, <a href="https://nielseniq.com/global/en/insights/analysis/2026/agentic-commerce-and-ai-in-cpg/" target="_blank" rel="noopener">NielsenIQ</a></div>
   </div>
 
   <div class="card">
-    <h4>PE-backed companies with systematic AI capabilities post nearly 2x return on invested capital</h4>
-    <p>FTI Consulting's 2026 Private Equity AI Radar reports that PE-backed companies that systematically build AI capabilities across functions have nearly twice the return on invested capital compared to those that do not. Yet AI integration remains early-stage: deal sourcing adoption rates top out at 31%, and majorities rate AI as ineffective for portfolio monitoring (75%). The value is in operations, not deal workflow — and most funds have not made that distinction clearly.</p>
-    <div class="relevance relevance-green">The 2x ROIC gap is the Status Quo sell-in statistic for GP conversations. Our target PortCo is the consumer brand inside a PE fund that has not yet built systematic AI capabilities. The fund already knows the value — what it needs is an operating partner to execute. Frame every pitch around closing this specific gap, not AI in general.</div>
-    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.fticonsulting.com/insights/reports/2026-private-equity-ai-radar" target="_blank" rel="noopener">FTI: 2026 Private Equity AI Radar</a>, <a href="https://www.claconnect.com/en/resources/blogs/private-equity/ai-and-private-equity-in-2026-6-predictions-redefining-value-creation" target="_blank" rel="noopener">CLA Connect: AI and PE 2026</a></div>
+    <h4>PE-backed companies with systematic AI post nearly 2× ROIC — BCG finds 2–3 focused use cases beat broad transformation</h4>
+    <p>BCG research finds that PE-backed companies building AI capabilities systematically across functions achieve nearly twice the return on invested capital versus those that do not. The clearest pattern: firms identifying two to three high-impact AI use cases per portfolio company — rather than broad digital transformation programs — see the fastest EBITDA expansion through cost automation, pricing optimisation, and improved working capital management.</p>
+    <div class="relevance relevance-green">Two to three focused use cases per company is exactly the right delivery model for an operating partner mandate. Use the BCG 2x ROIC figure in PE client pitches — it converts scepticism into urgency. The implication for engagement design: scope tightly (demand forecasting, markdown optimisation, or operational reporting), deliver fast, and let the EBITDA evidence expand the mandate.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.bcg.com/publications/2026/private-equitys-future-digital-first-and-ai-powered" target="_blank" rel="noopener">BCG</a>, <a href="https://www.fticonsulting.com/insights/reports/2026-private-equity-ai-radar" target="_blank" rel="noopener">FTI Consulting</a></div>
   </div>
 </div>
 
@@ -279,35 +279,37 @@
     <span class="section-title twitter-blue">Signals from X</span>
   </div>
 
-  <p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#aaa; line-height:1.7; margin-bottom:16px; padding:14px 18px; background:#0d0d0d; border-radius:8px; border-left:2px solid #1DA1F2;">The week's X discourse split between two competing framings: AI as a near-AGI breakthrough versus AI as a jagged, team-level bottleneck. Pat Grady's "2026: This is AGI" went viral and triggered substantive pushback from researchers drawing the AGI/agent distinction. The sharpest reframe came from @georgejrjrjr: "the model is not the agent" — repositioning the real design problem as orchestration, not capability. Ethan Mollick's observation that AI creates workflow friction at organizational seams even while excelling at individual tasks is the most actionable framing for enterprise deployments; it describes exactly the gap Status Quo fills.</p>
-
-  <div class="twitter-group-label">Models &amp; Capabilities</div>
+  <div class="twitter-group-label">AGI Inflection Debate</div>
   <a class="twitter-card" href="https://x.com/gradypb/status/2011491957730918510" target="_blank" rel="noopener">
-    <div><span class="twitter-handle">@gradypb</span><span class="twitter-engagement">viral</span></div>
-    <div class="twitter-insight">"2026: This is AGI" — Sequoia's Pat Grady sparked the week's biggest debate with a post declaring the AGI threshold crossed, citing long-horizon agent performance across coding and reasoning tasks.</div>
+    <div><span class="twitter-handle">@gradypb</span><span class="twitter-engagement">~3.8K likes</span></div>
+    <div class="twitter-insight">"2026: This is AGI." Pat Grady's sparse three-word post sparked the week's most substantive thread. Long-horizon agents are functionally AGI, he argues — and the debate about whether we've crossed the threshold has become academic. Hundreds of replies disagreed on definitions; almost none disagreed on the trajectory.</div>
   </a>
+
+  <div class="twitter-group-label">Organisational Jaggedness</div>
   <a class="twitter-card" href="https://x.com/emollick/status/2021627729637158922" target="_blank" rel="noopener">
-    <div><span class="twitter-handle">@emollick</span><span class="twitter-engagement">high engagement</span></div>
-    <div class="twitter-insight">"AI is a very big deal and most people don't know how good it has gotten, fast. A missing caveat: AI is still quite jagged, especially when it comes to work across teams and organizations, which creates bottlenecks, for now." Wharton's Ethan Mollick responding to a viral essay on AI advancement — the "jagged" framing is the most cited concept in enterprise AI implementation this week.</div>
+    <div><span class="twitter-handle">@emollick</span><span class="twitter-engagement">~2.1K likes</span></div>
+    <div class="twitter-insight">Ethan Mollick on a viral AI essay: "I agree that AI is a very big deal and that most people don't know how good it has gotten, fast. A missing caveat is that AI is still quite jagged, especially when it comes to work across teams and organisations, which creates bottlenecks, for now." The "for now" is the operative phrase.</div>
   </a>
 
-  <div class="twitter-group-label">Agent Architecture</div>
+  <div class="twitter-group-label">Model vs. Agent Distinction</div>
   <a class="twitter-card" href="https://x.com/georgejrjrjr/status/2017339941722747282" target="_blank" rel="noopener">
-    <div><span class="twitter-handle">@georgejrjrjr</span><span class="twitter-engagement">widely shared</span></div>
-    <div class="twitter-insight">"Runaway AI discourse has been miscalibrated for a long time... The model is not the agent. The model is a neural computer that hosts agents." A thread clarifying the model/agent distinction that's gained significant traction among practitioners building production agentic systems.</div>
+    <div><span class="twitter-handle">@georgejrjrjr</span><span class="twitter-engagement">~1.4K likes</span></div>
+    <div class="twitter-insight">"The model is not the agent. The model is a neural computer that hosts agents." A sharp thread on why 'runaway AI' discourse has been miscalibrated — conflating model capability with agent autonomy. The distinction matters practically: it changes how you scope, constrain, and audit agent deployments.</div>
   </a>
 
-  <div class="twitter-group-label">Stack &amp; Tooling</div>
+  <div class="twitter-group-label">Claude Performance Backlash</div>
+  <a class="twitter-card" href="https://fortune.com/2026/04/14/anthropic-claude-performance-decline-user-complaints-backlash-lack-of-transparency-accusations-compute-crunch/" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">X / developer community</span><span class="twitter-engagement">~2.9K likes across threads</span></div>
+    <div class="twitter-insight">Heavy Claude users are reporting instruction-following failures on complex multi-step workflows — the same week Anthropic shipped a major Claude Code redesign. Reports are consistent enough across accounts to suggest a systemic issue, not user error. Anthropic has made no public acknowledgement. Fortune covered it April 14.</div>
+  </a>
+
+  <div class="twitter-group-label">Weekly AI Dispatch</div>
   <a class="twitter-card" href="https://x.com/TheZvi/status/2009277777267093635" target="_blank" rel="noopener">
-    <div><span class="twitter-handle">@TheZvi</span><span class="twitter-engagement">newsletter + thread</span></div>
-    <div class="twitter-insight">"AI #150: While Claude Codes" — Zvi Mowshowitz's weekly AI dispatch this week focused on Claude Code's expanding role as a primary development environment, noting the Routines feature as the most operationally significant Anthropic release of the month.</div>
+    <div><span class="twitter-handle">@TheZvi</span><span class="twitter-engagement">~2.4K likes</span></div>
+    <div class="twitter-insight">"AI #150: While Claude Codes." Zvi's 150th dispatch lands this week — the milestone itself a signal. The newsletter that started tracking a nascent field now covers an industry in full acceleration. The tone has shifted from cautious observation to active reckoning with deployment consequences.</div>
   </a>
 
-  <div class="twitter-group-label">Discourse &amp; Critique</div>
-  <a class="twitter-card" href="https://x.com/TheZvi/status/2001697151277998481" target="_blank" rel="noopener">
-    <div><span class="twitter-handle">@TheZvi</span><span class="twitter-engagement">newsletter</span></div>
-    <div class="twitter-insight">"AI #147: Flash Forward" — an earlier dispatch from Zvi cataloguing the pace of model releases and raising the persistent question of whether benchmark velocity is outrunning deployment readiness. The gap between what models can do and what organizations have operationalized remains the defining tension of 2026.</div>
-  </a>
+  <p style="font-size:13px; color:#888; line-height:1.7; margin-top:20px; font-family:'DM Sans',sans-serif;">X discourse this week split between AGI declarers and jaggedness realists. Pat Grady's "2026: This is AGI" post drove the highest-volume thread, with responses cleaving cleanly: those building agents agreed on trajectory, those in organisational roles cited the bottlenecks Mollick named. A sharper parallel debate ran through developer communities: sustained reports of Claude instruction-following regression on complex workflows arrived the same week Anthropic shipped its biggest Claude Code update. Anthropic has not responded publicly. The contrast — visible product investment, invisible model quality communication — is itself a story about how AI labs manage user trust at scale.</p>
 </div>
 
 <!-- THINGS TO TRY -->
@@ -315,42 +317,42 @@
   <h3>▸ Things to Try This Week</h3>
 
   <div class="try-item">
-    <span class="try-effort">45 min</span>
+    <span class="try-effort">30 min</span>
     <div>
-      <div class="try-action">Set up a Claude Code Routine for one client's weekly BigQuery report</div>
-      <div class="try-why">Claude Code Routines run on Anthropic's cloud without a local machine. Bundle the BigQuery pull prompt + client repo + Notion connector into a Routine and trigger it on a weekly schedule. If it works, the manual trigger step disappears from every client cadence.</div>
+      <div class="try-action">Connect Google's BigQuery MCP server to Claude Code and run schema introspection on a client dataset</div>
+      <div class="try-why">The official server is now live and fully managed. No custom connector required. Start with a read-only dataset and test whether Claude can describe the schema, write a query, and summarise results in a single session — that's the full loop the old approach required 3 tools to complete.</div>
     </div>
   </div>
 
   <div class="try-item">
     <span class="try-effort">30 min</span>
     <div>
-      <div class="try-action">Test the managed BigQuery MCP endpoint against your existing integration</div>
-      <div class="try-why">Google's managed MCP server for BigQuery removes the custom connector code you currently maintain. Swap one client's BigQuery MCP connection to the managed endpoint and measure whether query latency and auth reliability improve.</div>
+      <div class="try-action">Enable Claude Code Routines for the automated weekly business review trigger</div>
+      <div class="try-why">Routines launched in research preview this week and work offline on Mac. Set up a recurring schedule that pulls client data, runs the analysis, and outputs a draft. Replace the current cron job and see whether the native integration handles edge cases better.</div>
     </div>
   </div>
 
   <div class="try-item">
     <span class="try-effort">1 hour</span>
     <div>
-      <div class="try-action">Wire Notion 3.4 Custom Agents to a private client Slack channel</div>
-      <div class="try-why">Notion 3.4 now supports Custom Agents in private Slack channels. Configure a Notion agent to post meeting transcript summaries and action items to the client's private #ops channel after each sync — no manual copy-paste from Notion to Slack.</div>
+      <div class="try-action">Build a Notion Worker that calculates weekly KPIs and writes to a client dashboard</div>
+      <div class="try-why">Notion 3.4 Workers are JavaScript functions that agents can invoke for real computation. Replace the current Python export script with a Worker triggered via MCP. If it works, the pipeline collapses from three tools to one.</div>
     </div>
   </div>
 
   <div class="try-item">
     <span class="try-effort">half day</span>
     <div>
-      <div class="try-action">Run Qwen 3 32B locally on a client demand-forecasting dataset</div>
-      <div class="try-why">Qwen 3 32B matches GPT-4o on reasoning benchmarks and fits on a single H100. For clients with data residency requirements (common in Norwegian PE portfolios), this is the first local model worth seriously evaluating. Compare output quality and cost against current Sonnet API calls.</div>
+      <div class="try-action">Test Slack RTS API for competitive intelligence monitoring across a brand's channel history</div>
+      <div class="try-why">The RTS API is now GA and searches threads, attachments, and channels in real time. Connect it to Claude Code via the Slack MCP server and test a brand monitoring query — how has the team discussed [competitor] over the past 30 days? This replaces a manual digest step.</div>
     </div>
   </div>
 
   <div class="try-item">
     <span class="try-effort">this sprint</span>
     <div>
-      <div class="try-action">Draft a one-page "AI Readiness Assessment" for PE-backed consumer brands</div>
-      <div class="try-why">Kyndryl's Agentic Service Management launch shows the market is packaging AI maturity assessments as a product. A Status Quo version — tuned to consumer brand operations, scored against the 72% operational-improvement benchmark from the S&amp;P PE survey — would serve as a deal-sourcing tool and client onboarding frame.</div>
+      <div class="try-action">Benchmark Qwen 3.5 9B against Claude Sonnet on a reasoning-heavy client analysis task</div>
+      <div class="try-why">A 9B open-weight model scoring 81.7% on GPQA Diamond — outperforming OpenAI's 120B — changes the cost calculus for high-frequency deliverables. Run it on a representative client task (brand positioning analysis, supplier benchmarking) and compare accuracy and latency. If it's within 10% of Sonnet, the recurring API cost drops significantly.</div>
     </div>
   </div>
 </div>
@@ -358,46 +360,46 @@
 <!-- WATCHLIST -->
 <div class="watchlist" id="watchlist">
   <h3>Watch Next Week</h3>
-  <div class="watchlist-item"><span class="bullet">■</span><span>Claude Code Routines GitHub event trigger — test whether a PR merge on a client repo fires the weekly report Routine correctly; validate by April 20</span></div>
-  <div class="watchlist-item"><span class="bullet">■</span><span>Notion 3.4 private Slack channel agents — confirm Custom Agent deployment in a client workspace and test transcript-to-Slack action item flow before April 21</span></div>
-  <div class="watchlist-item"><span class="bullet">■</span><span>OpenAI Codex pay-as-you-go pricing — compare per-task cost against Claude Code Routines session-hour cost for our standard weekly report workload; decision by April 22</span></div>
-  <div class="watchlist-item"><span class="bullet">■</span><span>Anthropic performance and reliability — Claude experienced a notable outage April 15 alongside user complaints about quality degradation; monitor for recurrence before scaling Routines to all clients</span></div>
-  <div class="watchlist-item"><span class="bullet">■</span><span>S&amp;P Global PE survey follow-on coverage — watch for fund-level responses to the "operational pivot" findings; any GP publicly announcing AI operating partner mandates is a warm lead</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Anthropic public response to performance decline reports — watch release notes and the anthropic.com/news feed. If no acknowledgement by April 21, the silence becomes the story for clients evaluating model reliability.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Google BigQuery MCP server production readiness — initial release is live; watch for rate limit documentation, enterprise auth options, and IAM integration details expected in the following week's Cloud changelog.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Notion Workers GA timeline — launched as a research preview; Notion typically accelerates preview features to GA within 4–6 weeks. Watch the notion.com/releases feed. If GA lands before May, prioritise the client KPI Worker build.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>GPT-5.4 computer-use API access expansion — currently limited release. Watch for broader developer access by April 23. Evaluate for legacy system handoffs in portfolio company environments with no existing API layer.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>S&P Global 2026 PE full survey report — summary published April 13; full dataset expected by April 20. The portfolio monitoring data (75% of PE firms find AI ineffective here) is the most relevant section for client conversations.</span></div>
 </div>
 
 <!-- COMMANDS -->
 <div class="commands-section" id="commands">
   <h3>⌘ Commands Worth Knowing</h3>
   <div class="command-item">
-    <span class="command-label">claude /schedule</span>
-    <span class="command-desc">Set up a Claude Code Routine that runs on a cron — no local machine required. The newsletter you're reading was generated by one.</span>
+    <span class="command-label">claude mcp add bigquery</span>
+    <span class="command-desc">Register Google's official BigQuery MCP server in your Claude Code session. First step to querying client datasets directly from the terminal without a custom connector.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">bq query --nouse_legacy_sql</span>
-    <span class="command-desc">Run standard SQL against BigQuery from the terminal. Pair with Claude Code to iterate on financial queries without leaving the shell.</span>
+    <span class="command-label">bq ls --project_id=PROJECT_ID</span>
+    <span class="command-desc">List all datasets in a BigQuery project. Run this immediately after connecting the MCP server to confirm Claude can see the schema you want to expose.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">gh run watch</span>
-    <span class="command-desc">Stream a GitHub Actions workflow in real time from your terminal. Know when your deploy finishes without refreshing a browser tab.</span>
+    <span class="command-label">claude mcp add slack</span>
+    <span class="command-desc">Connect Slack's now-GA MCP server to your session. Enables real-time channel search, thread reads, and message drafting — all agent-native without OAuth setup.</span>
   </div>
   <div class="command-item">
     <span class="command-label">claude --resume</span>
-    <span class="command-desc">Pick up your last Claude Code session exactly where you left off — context, files, and tool state intact.</span>
+    <span class="command-desc">Resume your last Claude Code session with full context, open files, and tool state intact. Essential now that parallel sessions are live — don't recreate context you already built.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">mcp list</span>
-    <span class="command-desc">See every MCP server connected to your current session. First thing to check when a tool silently fails.</span>
+    <span class="command-label">bq query --format=csv --max_rows=1000 'SQL'</span>
+    <span class="command-desc">Export BigQuery results as CSV directly to the terminal. Pipe the output to Claude Code for on-the-fly analysis without opening a browser or a notebook.</span>
   </div>
   <div class="command-item">
-    <span class="command-label">npx live-server .</span>
-    <span class="command-desc">Instant local server with hot reload. No config. The fastest way to preview any static HTML file.</span>
+    <span class="command-label">gh run watch</span>
+    <span class="command-desc">Stream a GitHub Actions run in real time from the terminal. Use this when a Claude Code session triggers CI — watch the pipeline without leaving the shell.</span>
   </div>
 </div>
 
 <!-- ANALYST NOTE -->
 <div class="analyst-note" id="analyst">
   <h3>Analyst Note</h3>
-  <p>Two numbers frame the next twelve months. S&P Global: 72% of PE general partners now name operational improvement — not financial engineering — as their top value creation lever. Schneider Electric: 95% of CPG leaders report AI is already reducing operating costs. The demand loop is closed. The funds want operational uplift at the portfolio level. The brands want cost reduction at the operations level. AI-native operators who can deliver both simultaneously — scheduled automations that surface insights by morning, agent workflows that replace manual reporting cycles — are no longer pitching a vision. They are filling an explicit gap. Claude Code Routines landing this week is not a product announcement. It is infrastructure for that operating model.</p>
+  <p>The stack solidified this week. Not with a single announcement — with convergence. A managed MCP server for BigQuery. A managed MCP server for Slack. A production-grade parallel session model in the primary coding tool. A computation layer added to the primary knowledge base. None of these are individually transformative. Together, they describe a complete operating system for a small, AI-native team running complex client work. The firms that recognised this architecture 18 months ago are now running on production rails. Everyone else is still evaluating vendors. The infrastructure debate is over. What remains is the execution gap — and it is widening faster than most operators realise.</p>
 </div>
 
 <!-- FOOTER -->
