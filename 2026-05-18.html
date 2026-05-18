@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Quo — May 18, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Newsreader', Georgia, serif; background: #000; color: #fff; margin: 0; padding: 0 0 0 200px; min-height: 100vh; }
+  .main-content { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+  .label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+  .heading { font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; }
+  .muted { color: #888; }
+  .green { color: #3AE49D; }
+  .yellow { color: #FFF766; }
+  .twitter-blue { color: #1DA1F2; }
+
+  /* Header */
+  .header { padding-top: 40px; padding-bottom: 24px; margin-bottom: 32px; border-bottom: 1px solid #2a2a2a; }
+  .header h1 { font-size: 32px; margin-top: 8px; }
+  .header .date { font-family: 'DM Sans', sans-serif; font-size: 11px; color: #888; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
+
+  /* Summary */
+  .summary { margin-bottom: 36px; }
+  .summary h2 { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; text-transform: uppercase; }
+  .summary p { font-size: 15px; line-height: 1.7; color: #ddd; padding-left: 16px; border-left: 2px solid #3AE49D; }
+  .summary ul { list-style: none; margin-bottom: 16px; }
+  .summary li { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: #fff; padding: 6px 0; display: flex; align-items: baseline; gap: 10px; }
+  .summary li .bullet { color: #3AE49D; font-size: 8px; flex-shrink: 0; }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #2a2a2a; }
+  .section-icon { font-size: 10px; font-weight: 700; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 2px; }
+  .section-title { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* Card */
+  .card { padding: 20px 24px; border-radius: 10px; background: #141414; border: 1px solid #2a2a2a; margin-bottom: 16px; }
+  .card h4 { font-size: 15px; font-weight: 600; margin-bottom: 10px; font-family: 'Newsreader', Georgia, serif; }
+  .card p { font-size: 14px; line-height: 1.7; color: #e0e0e0; margin-bottom: 14px; }
+  .card .relevance { font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 10px 14px; border-radius: 8px; line-height: 1.5; font-weight: 500; }
+  .relevance-green { background: rgba(58,228,157,0.04); color: #3AE49D; border-left: 2px solid rgba(58,228,157,0.25); }
+  .relevance-yellow { background: rgba(255,247,102,0.04); color: #FFF766; border-left: 2px solid rgba(255,247,102,0.25); }
+  .relevance-white { background: rgba(255,255,255,0.04); color: #fff; border-left: 2px solid rgba(255,255,255,0.25); }
+
+  /* Sources */
+  .sources { margin-top: 10px; font-family: 'DM Sans', sans-serif; font-size: 11px; color: #888; line-height: 1.6; }
+  .sources .sources-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .sources a { color: #888; text-decoration: underline; text-underline-offset: 2px; }
+  .sources a:hover { color: #aaa; }
+
+  /* Twitter Signals */
+  .twitter-section { margin-bottom: 40px; }
+  .twitter-group-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; margin-top: 16px; }
+  .twitter-card { display: block; text-decoration: none; padding: 14px 18px; border-radius: 10px; background: #141414; border: 1px solid #2a2a2a; margin-bottom: 8px; }
+  .twitter-card:hover { border-color: #1DA1F2; }
+  .twitter-handle { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; color: #1DA1F2; }
+  .twitter-engagement { font-family: 'DM Sans', sans-serif; font-size: 10px; padding: 2px 8px; border-radius: 6px; background: rgba(29,161,242,0.08); color: #1DA1F2; font-weight: 600; margin-left: 10px; }
+  .twitter-insight { font-size: 14px; line-height: 1.6; color: #e0e0e0; margin-top: 6px; }
+
+  /* Things to Try */
+  .try-section { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #3AE49D; }
+  .try-section h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #3AE49D; }
+  .try-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .try-effort { font-family: 'DM Sans', sans-serif; font-size: 10px; padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(58,228,157,0.3); color: #3AE49D; font-weight: 600; flex-shrink: 0; margin-top: 2px; white-space: nowrap; width: 76px; text-align: center; box-sizing: border-box; }
+  .try-action { font-size: 14px; color: #fff; line-height: 1.5; }
+  .try-why { font-size: 13px; color: #bbb; line-height: 1.5; margin-top: 2px; }
+
+  /* Watchlist */
+  .watchlist { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #FFF766; }
+  .watchlist h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #FFF766; }
+  .watchlist-item { font-size: 14px; line-height: 1.6; color: #e0e0e0; display: flex; gap: 12px; align-items: baseline; margin-bottom: 10px; }
+  .watchlist-item .bullet { color: #FFF766; flex-shrink: 0; font-size: 8px; }
+
+  /* Commands */
+  .commands-section { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #fff; }
+  .commands-section h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #888; }
+  .command-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .command-label { font-family: 'DM Sans', sans-serif; font-size: 11px; padding: 5px 10px; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid #2a2a2a; color: #fff; font-weight: 600; flex-shrink: 0; font-variant-ligatures: none; letter-spacing: 0.02em; white-space: nowrap; width: 90px; text-align: center; box-sizing: border-box; }
+  .command-desc { font-size: 13px; color: #aaa; line-height: 1.5; }
+
+  /* Analyst note */
+  .analyst-note { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #1a1a1a; border: 1px solid #2a2a2a; }
+  .analyst-note h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; color: #3AE49D; }
+  .analyst-note p { font-size: 15px; line-height: 1.75; color: #e0e0e0; font-style: italic; }
+
+  /* Footer */
+  .footer { border-top: 1px solid #2a2a2a; padding: 20px 0 40px; display: flex; justify-content: space-between; align-items: center; }
+  .footer .date-label { font-family: 'DM Sans', sans-serif; font-size: 10px; color: #888; letter-spacing: 0.08em; text-transform: uppercase; }
+  .footer .brand { font-family: 'DM Sans', sans-serif; font-size: 10px; color: #3AE49D; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+
+  /* Sidebar Navigation */
+  .sidebar-nav { position: fixed; left: 0; top: 0; width: 200px; height: 100vh; background: #0a0a0a; border-right: 1px solid #1a1a1a; padding: 40px 0 40px 20px; display: flex; flex-direction: column; gap: 2px; z-index: 100; overflow-y: auto; }
+  .sidebar-brand { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AE49D; margin-bottom: 24px; text-decoration: none; display: block; }
+  .sidebar-nav a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; color: #555; text-decoration: none; padding: 8px 14px; border-radius: 4px; display: flex; align-items: center; gap: 8px; transition: color 0.15s, background 0.15s; line-height: 1.3; }
+  .sidebar-nav a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+  .sidebar-nav a .nav-icon { font-size: 8px; flex-shrink: 0; width: 14px; text-align: center; }
+  .sidebar-nav a.nav-green .nav-icon { color: #3AE49D; }
+  .sidebar-nav a.nav-yellow .nav-icon { color: #FFF766; }
+  .sidebar-nav a.nav-white .nav-icon { color: #fff; }
+  .sidebar-nav a.nav-blue .nav-icon { color: #1DA1F2; }
+  .sidebar-divider { height: 1px; background: #1a1a1a; margin: 10px 14px 10px 0; }
+
+  @media (max-width: 960px) {
+    .sidebar-nav { display: none; }
+    body { padding-left: 0; }
+  }
+
+  @media print {
+    .sidebar-nav { display: none; }
+    body { padding-left: 0; }
+    body { background: #fff; color: #000; }
+    .card, .try-section, .watchlist, .twitter-card { border-color: #ddd; background: #f9f9f9; }
+    .card p, .summary p, .analyst-note p, .watchlist-item, .twitter-insight, .try-why { color: #333; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<nav class="sidebar-nav">
+  <a href="#top" class="sidebar-brand">Status Quo</a>
+  <a href="#summary" class="nav-green"><span class="nav-icon">▲</span>Summary</a>
+  <a href="#models" class="nav-green"><span class="nav-icon">■</span>Models & Benchmarks</a>
+  <a href="#stack" class="nav-yellow"><span class="nav-icon">■</span>Stack & MCP</a>
+  <a href="#consultancy" class="nav-white"><span class="nav-icon">■</span>Consultancy Plays</a>
+  <a href="#industry" class="nav-green"><span class="nav-icon">■</span>Industry & Pricing</a>
+  <div class="sidebar-divider"></div>
+  <a href="#signals" class="nav-blue"><span class="nav-icon">■</span>Signals from X</a>
+  <a href="#try" class="nav-green"><span class="nav-icon">▲</span>Things to Try</a>
+  <a href="#watchlist" class="nav-yellow"><span class="nav-icon">▲</span>Watchlist</a>
+  <a href="#commands" class="nav-white"><span class="nav-icon">▲</span>Commands</a>
+  <a href="#analyst" class="nav-green"><span class="nav-icon">▲</span>Analyst Note</a>
+</nav>
+
+<div class="main-content">
+
+<!-- HEADER -->
+<div class="header" id="top">
+  <div class="label green">Status Quo</div>
+  <h1 class="heading">STATUS QUO</h1>
+  <div class="date">Monday, May 18, 2026</div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary" id="summary">
+  <h2>OpenAI Enters Consulting With $4B Deployment Company — and the MCP Ecosystem Just Got a Lot Bigger</h2>
+  <ul>
+    <li><span class="bullet">■</span>OpenAI launches $4B Deployment Company, acquires Tomoro and 150 engineers — direct challenge to boutique AI firms</li>
+    <li><span class="bullet">■</span>GPT-5.5 becomes ChatGPT's default model, posting 52.5% fewer hallucinations than GPT-5.3 Instant</li>
+    <li><span class="bullet">■</span>Notion's developer platform goes live — Workers, External Agent API, and full MCP OAuth now generally available</li>
+    <li><span class="bullet">■</span>95% of PE funds report AI meeting business case targets — but nearly as many pilots fail to reach production</li>
+  </ul>
+  <p>OpenAI's $4B Deployment Company — backed by TPG, Bain, McKinsey, and Capgemini — is the biggest structural move in enterprise AI services this year. With 150 forward-deployed engineers absorbed from Tomoro, OpenAI is now competing directly for the same mandates that AI-native boutiques target. Simultaneously, GPT-5.5 lands as ChatGPT's default, Notion opens its workspace to external agents, and Anthropic ships 20+ new MCP connectors spanning legal, SAP, and creative tools. The stack is consolidating fast — and the gap between firms that have production-grade AI workflows and those still running pilots is becoming the defining divide.</p>
+</div>
+
+<!-- SECTION 1: Models & Benchmarks -->
+<div class="section" id="models">
+  <div class="section-header">
+    <span class="section-icon green" style="background:rgba(58,228,157,0.08);">■</span>
+    <span class="section-title green">Models &amp; Benchmarks</span>
+  </div>
+
+  <div class="card">
+    <h4>GPT-5.5 becomes ChatGPT's default model — 52.5% fewer hallucinations on high-stakes prompts</h4>
+    <p>OpenAI replaced GPT-5.3 Instant with GPT-5.5 Instant as the default model for all ChatGPT users on May 5. On high-stakes domains — medicine, law, finance — GPT-5.5 Instant produced 52.5% fewer hallucinated claims than its predecessor. Multi-step reasoning, tool use, and agentic workflows are all improved. GPT-5.5 also ships with a dedicated GPT-5.5-Cyber variant in limited preview for authorized security and vulnerability workflows.</p>
+    <div class="relevance relevance-green">The hallucination reduction matters most for client-facing financial analysis and regulatory work — exactly where errors are costliest. Benchmark GPT-5.5 against Sonnet 4.6 on your most sensitive reporting templates before next client delivery.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://openai.com/index/gpt-5-5-instant/" target="_blank" rel="noopener">OpenAI GPT-5.5 Instant</a>, <a href="https://www.axios.com/2026/05/05/openai-chatgpt-update-default-model" target="_blank" rel="noopener">Axios</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Qwen 3.6-72B: 94.8% HumanEval and 256K context — open-weight leader firms up</h4>
+    <p>Alibaba's Qwen 3.6-72B dense model posts 94.8% on HumanEval, 68.2% on SWE-bench Verified, and 71.4% on LiveCodeBench, with a 256K context window. It now competes directly with mid-tier proprietary models on coding tasks. Combined with Llama 4 Maverick's 10M-token context window, the open-weight tier has effectively removed the context ceiling as a constraint on agentic architectures.</p>
+    <div class="relevance relevance-green">For long-running client workflows that currently re-summarize context — weekly brand performance pipelines, quarterly reporting agents — Llama 4 Maverick's 10M window removes the need for that workaround entirely. Evaluate against current Sonnet-based implementation.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://codersera.com/blog/best-open-source-llm-2026-llama-4-qwen-3-5-deepseek-v4-gemma-4-mistral/" target="_blank" rel="noopener">Codersera LLM Comparison</a>, <a href="https://futureagi.substack.com/p/best-llms-in-may-2026-what-actually" target="_blank" rel="noopener">Future AGI Substack</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Gemma 4 31B ships Apache 2.0 with 89.2% on AIME 2026 — Google's free frontier bet</h4>
+    <p>Google's Gemma 4 31B Dense, released April 2, scores 85.2% on MMLU Pro and 89.2% on AIME 2026 math benchmarks, ranking third on Arena AI. The Apache 2.0 license carries zero commercial restrictions across all four Gemma 4 variants. Mistral Medium 3.5, also released in late April, rounds out the open-weight landscape with EU data residency and $1.5/M input pricing via its API.</p>
+    <div class="relevance relevance-green">Gemma 4 31B is the cleanest option for client leave-behind tools — scorecards, dashboards, and forecasting scripts that need to run independently after engagement ends. Apache 2.0 means no licensing review required before handing over deliverables.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://aurigait.com/blog/gemma-4-features-benchmarks-guide/" target="_blank" rel="noopener">Gemma 4 Guide</a>, <a href="https://whatllm.org/blog/new-ai-models-may-2026" target="_blank" rel="noopener">WhatLLM.org</a></div>
+  </div>
+</div>
+
+<!-- SECTION 2: Stack & MCP Ecosystem -->
+<div class="section" id="stack">
+  <div class="section-header">
+    <span class="section-icon yellow" style="background:rgba(255,247,102,0.08);">■</span>
+    <span class="section-title yellow">Stack &amp; MCP Ecosystem</span>
+  </div>
+
+  <div class="card">
+    <h4>Notion launches developer platform with Workers and External Agent API</h4>
+    <p>Notion opened its developer platform on May 13-14, adding Workers — a cloud sandbox for running custom code directly inside Notion — alongside an External Agent API that lets teams connect any agent to their workspace. The MCP OAuth server adds Client ID Metadata Document support per spec 2025-11-25. Teams can now deploy custom logic, sync external data, and trigger multi-step workflows without routing through separate automation platforms. Claude Opus 4.7 is the default model inside Notion AI, using 3x fewer tool errors than prior versions.</p>
+    <div class="relevance relevance-yellow">Notion Workers changes the deployment calculus: lightweight business logic, brand data sync, and report triggers can now live inside the same workspace where the client reviews deliverables. Evaluate whether our BigQuery→Notion pipeline can collapse from three systems to one.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://winbuzzer.com/2026/05/14/notion-just-turned-its-workspace-into-a-hub-for-ai-xcxwbn/" target="_blank" rel="noopener">WinBuzzer</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Anthropic ships 20+ MCP connectors — SAP Business AI, legal tooling, and creative suites</h4>
+    <p>Anthropic this week expanded the Claude MCP connector library to include SAP Business AI (covering S/4HANA, SuccessFactors, and Ariba), 12 legal practice-area plugins for Thomson Reuters CoCounsel, and creative tool connectors for Ableton, Blender, Autodesk Fusion, and SketchUp. A separate MCP connector beta now lets developers connect Claude to any remote MCP server without writing client code — removing the last meaningful setup barrier for small teams.</p>
+    <div class="relevance relevance-yellow">The no-code MCP connector beta is directly relevant: connecting Claude to a client's Google Workspace, BigQuery, or Slack instance now requires configuration, not engineering. This cuts integration time from hours to minutes for each new client onboarding.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.legaltechnologyhub.com/contents/anthropic-unveils-claude-for-legal-with-12-new-plugins-20-mcp-connectors-and-more/" target="_blank" rel="noopener">Legaltech Hub</a>, <a href="https://news.sap.com/2026/05/sap-anthropic-to-bring-claude-sap-business-ai-platform/" target="_blank" rel="noopener">SAP News Center</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Slack launches MCP server and Real-Time Search API for agent-ready access</h4>
+    <p>Slack shipped both a new Model Context Protocol server and a Real-Time Search (RTS) API this week, designed for secure agent access to workspace data. The MCP server covers message search, channel history, and user context; the RTS API targets low-latency semantic search over conversation history. Notion separately added Custom Agents support for reading and posting in private Slack channels with workspace-controlled access.</p>
+    <div class="relevance relevance-yellow">Slack MCP plus Notion's agent integration means the two tools at the center of every client's day-to-day are now natively agent-readable. Weekly status briefings, channel summarisation, and brand performance alerts can run without any custom scraping or Zapier workarounds.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://slack.com/blog/news/powering-agentic-collaboration" target="_blank" rel="noopener">Slack Blog</a>, <a href="https://almcorp.com/blog/notion-ai-agent-platform-workers-external-agents-enterprise-search/" target="_blank" rel="noopener">ALM Corp</a></div>
+  </div>
+</div>
+
+<!-- SECTION 3: AI-Native Consultancy Plays -->
+<div class="section" id="consultancy">
+  <div class="section-header">
+    <span class="section-icon" style="color:#fff; background:rgba(255,255,255,0.08);">■</span>
+    <span class="section-title" style="color:#fff;">AI-Native Consultancy Plays</span>
+  </div>
+
+  <div class="card">
+    <h4>OpenAI Deployment Company: $4B, TPG/Bain/McKinsey, and 150 forward-deployed engineers from Tomoro</h4>
+    <p>OpenAI launched the OpenAI Deployment Company on May 12, backed by $4B from TPG, Advent, Bain Capital, Brookfield, Bain &amp; Company, Capgemini, and McKinsey. The company simultaneously acquired Tomoro — an applied AI consultancy with clients including Tesco, Virgin Atlantic, and Supercell — adding 150 forward-deployed engineers to the team. The model is explicitly boutique: small pods embedded into organizations to redesign workflows around AI. This is the most direct competitive challenge yet to independent AI-native firms.</p>
+    <div class="relevance relevance-white">OpenAI's FDE model and client list (consumer brands, airlines, games) maps precisely onto the same segments small AI-native operators target. The competitive response is differentiation on depth and speed, not breadth: proprietary client data, sector-specific playbooks, and delivery cadences that a corporate JV cannot match at small account sizes.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://openai.com/index/openai-launches-the-deployment-company/" target="_blank" rel="noopener">OpenAI</a>, <a href="https://www.bloomberg.com/news/articles/2026-05-11/openai-to-buy-consulting-firm-for-private-equity-joint-venture" target="_blank" rel="noopener">Bloomberg</a>, <a href="https://winbuzzer.com/2026/05/12/openai-launches-deployment-company-tomoro-acquisition-xcxwbn/" target="_blank" rel="noopener">WinBuzzer</a></div>
+  </div>
+
+  <div class="card">
+    <h4>IBM's Forward Deployed Units: humans at the edges, a digital workforce in the middle</h4>
+    <p>IBM Consulting unveiled its Forward Deployed Units model on May 14 — small human pods at the client edge, with a "digital workforce" of specialized coding, evaluation, testing, and documentation agents in the centre. IBM is explicitly positioning this against the staffing pyramid of legacy consulting: same scope, fewer billable hours, higher margin. The model is shipping to enterprise clients immediately.</p>
+    <div class="relevance relevance-white">IBM's FDU framing validates the exact architecture small AI-native operators already run. The difference: IBM is retrofitting this onto a 300,000-person firm. The lean operator who already runs this way doesn't need the retrofit — and can price accordingly. Use IBM's public materials to anchor your own delivery model in client conversations.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://newsroom.ibm.com/2026-05-14-A-New-Way-to-Make-AI-Actually-Work-in-the-Real-World" target="_blank" rel="noopener">IBM Newsroom</a></div>
+  </div>
+
+  <div class="card">
+    <h4>BCG puts the AI services opportunity at $200B — and says execution is the only bottleneck</h4>
+    <p>BCG published analysis this week sizing the AI opportunity in tech services at $200B, arguing that the constraint is no longer model capability but execution depth: firms that embed AI into core workflows are compounding advantages, while those running pilots are losing ground. The report specifically flags boutique and AI-native firms as capturing disproportionate share of complex analytical mandates.</p>
+    <div class="relevance relevance-white">BCG's framing — execution depth over model selection — is the clearest external validation of why the MCP-first, workflow-embedded approach wins over slide-deck consulting. Reference this in the next pitch deck to give the operating model institutional credibility without citing it as the source.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.bcg.com/publications/2026/the-200-billion-dollar-ai-opportunity-in-tech-services" target="_blank" rel="noopener">BCG</a>, <a href="https://futureofconsulting.ai/ai-leadership/2026-consultings-ai-revolution-update/" target="_blank" rel="noopener">Future of Consulting</a></div>
+  </div>
+</div>
+
+<!-- SECTION 4: Industry & Pricing Shifts -->
+<div class="section" id="industry">
+  <div class="section-header">
+    <span class="section-icon green" style="background:rgba(58,228,157,0.08);">■</span>
+    <span class="section-title green">Industry &amp; Pricing Shifts</span>
+  </div>
+
+  <div class="card">
+    <h4>PE AI Radar: 95% of funds report AI meeting targets — but 95% of pilots never reach production</h4>
+    <p>FTI Consulting's 2026 Private Equity AI Radar, released this week, surveyed 200 fund and operating leaders. It found that 95% report AI initiatives meeting or exceeding their original business case. Yet a nearly identical share of pilots fail to translate into production environments. The report identifies the "execution gap" — embedding AI into core workflows rather than running parallel proof-of-concepts — as the defining divide between portfolio companies that are compounding AI advantage and those that are not.</p>
+    <div class="relevance relevance-green">PE operating partners and their portco management teams are the exact audience for a positioning update this week. The FTI framing — "95% of pilots don't reach production" — is the opening argument for why an embedded operating partner with already-deployed workflows is worth the flat monthly fee.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.fticonsulting.com/insights/reports/2026-private-equity-ai-radar" target="_blank" rel="noopener">FTI Consulting</a>, <a href="https://huntscanlon.com/the-execution-gap-in-ai-is-becoming-private-equitys-defining-divide/" target="_blank" rel="noopener">Hunt Scanlon</a></div>
+  </div>
+
+  <div class="card">
+    <h4>CPG AI adoption at 71% — but growth-stage leaders are pulling back from expansion to fix operations first</h4>
+    <p>Keychain's 2026 CPG Manufacturing report found that 71% of CPG leaders have adopted AI, nearly double the 42% recorded in 2024. Adopters report average revenue increases of 69%. But the headline masks a strategic shift: as economic pressure and cost inflation persist, CPG companies are pulling back from aggressive expansion and focusing on operational efficiency — reducing errors (cited by 70%), cutting costs (53%), and managing compliance (46%). 59% are purchasing or evaluating new software this year.</p>
+    <div class="relevance relevance-green">The CPG sector is in an operational efficiency cycle, not a growth cycle. Consumer brand clients are not looking for revenue-acceleration pitches right now — they need tighter operations, reduced waste, and leaner cost structures. Reframe AI delivery proposals around error reduction and compliance, not top-line growth.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.prnewswire.com/news-releases/keychain-report-finds-ai-adoption-and-operational-investment-are-driving-the-next-phase-of-growth-in-cpg-manufacturing-302770141.html" target="_blank" rel="noopener">PR Newswire / Keychain</a>, <a href="https://nielseniq.com/global/en/insights/analysis/2026/agentic-commerce-and-ai-in-cpg/" target="_blank" rel="noopener">NielsenIQ</a></div>
+  </div>
+
+  <div class="card">
+    <h4>OpenAI launches ChatGPT Personal Finance with Plaid connections to 12,000 banks</h4>
+    <p>OpenAI launched ChatGPT Personal Finance on May 15 in preview for US Pro subscribers. Users can connect bank accounts via Plaid — covering more than 12,000 financial institutions — and query spending, savings trajectories, and financial planning scenarios in natural language. This is OpenAI's first direct move into a vertical market with proprietary data integration baked in at launch, not bolted on post-release.</p>
+    <div class="relevance relevance-green">The Plaid integration model is directly replicable for consumer brand client portals: connecting POS data, inventory systems, and supplier invoices to a query interface. ChatGPT Finance is a useful reference design to show brand operators what an AI-native financial review layer can look like before you build it for them.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/" target="_blank" rel="noopener">TechCrunch</a></div>
+  </div>
+</div>
+
+<!-- TWITTER SIGNALS -->
+<div class="twitter-section" id="signals">
+  <div class="section-header">
+    <span class="section-icon twitter-blue" style="background:rgba(29,161,242,0.08);">■</span>
+    <span class="section-title twitter-blue">Signals from X</span>
+  </div>
+
+  <div class="twitter-group-label">Models &amp; Benchmarks</div>
+  <a class="twitter-card" href="https://x.com/DataChaz/status/2054225085100151163" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@DataChaz</span><span class="twitter-engagement">viral · May 2026</span></div>
+    <div class="twitter-insight">Karpathy warned it: 90% of AI advice dies in 6 months. Most tools won't survive 90 days. This resonated widely as GPT-5.5 replaced GPT-5.3 as the default model just weeks after the previous "best model" discourse peaked. The signal: capability benchmarks are becoming irrelevant faster than teams can act on them.</div>
+  </a>
+
+  <div class="twitter-group-label">Stack &amp; MCP Ecosystem</div>
+  <a class="twitter-card" href="https://x.com/georgejrjrjr/status/2017339941722747282" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@georgejrjrjr</span><span class="twitter-engagement">high engagement · May 2026</span></div>
+    <div class="twitter-insight">"The model is not the agent. The model is a neural computer that hosts agents." This framing gained traction this week as Notion Workers and Slack MCP shipped — reframing Claude and GPT-5.5 as infrastructure rather than tools. Operators who treat models as hosts rather than assistants are building fundamentally different (and more durable) systems.</div>
+  </a>
+
+  <div class="twitter-group-label">AI-Native Consultancy Plays</div>
+  <a class="twitter-card" href="https://x.com/hamandcheese/status/1991716922510266409" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@hamandcheese</span><span class="twitter-engagement">high engagement · May 2026</span></div>
+    <div class="twitter-insight">On the OpenAI Deployment Company launch: the most substantive thread this week debated whether a $4B JV with McKinsey and Bain can actually move at boutique speed. Consensus: no. The structural constraint is incentive alignment, not headcount — and that doesn't change with more capital.</div>
+  </a>
+
+  <div class="twitter-group-label">Industry &amp; Pricing Shifts</div>
+  <a class="twitter-card" href="https://x.com/TheZvi/status/2009277777267093635" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@TheZvi</span><span class="twitter-engagement">ongoing · May 2026</span></div>
+    <div class="twitter-insight">Zvi Mowshowitz's weekly AI roundup — titled "While Claude Codes" — tracked the week's biggest theme: the gap between firms generating AI revenue and firms still in pilot mode widening into an unbridgeable moat. The PE angle (95% pilots fail to scale) dominated the comments.</div>
+  </a>
+
+  <a class="twitter-card" href="https://x.com/GlobalAIDebates/status/2041512127710507085" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@GlobalAIDebates</span><span class="twitter-engagement">1.5K+ · May 2026</span></div>
+    <div class="twitter-insight">Global AI Debates 2026 — focused on superintelligence timelines — ran alongside the OpenAI Deployment Company launch and generated a sharp contrast: the frontier labs are simultaneously building consulting arms and debating whether AGI is 18 months away. The cognitive dissonance is becoming the story.</div>
+  </a>
+
+  <p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#888; line-height:1.7; margin-top:16px; padding-top:12px; border-top:1px solid #2a2a2a;">This week's X discourse split cleanly into two camps. The builders — operators, MCP developers, Notion power users — were in execution mode, shipping workflows against the new Notion and Slack APIs. The commentators were debating whether OpenAI's consulting JV represents a genuine threat to independent operators or just a slow-moving enterprise sales channel with a boutique paint job. The loudest thread of the week, however, belonged to Karpathy's 6-month AI shelf-life warning: it surfaced again as GPT-5.5 replaced its predecessor weeks after most teams had finished tuning prompts for it. Velocity is the recurring trauma.</p>
+</div>
+
+<!-- THINGS TO TRY -->
+<div class="try-section" id="try">
+  <h3>▲ Things to Try This Week</h3>
+
+  <div class="try-item">
+    <span class="try-effort">30 min</span>
+    <div>
+      <div class="try-action">Connect Slack to Notion via the new MCP server — no custom code</div>
+      <div class="try-why">Slack shipped its MCP server this week. Pair it with Notion's External Agent API to route weekly channel summaries directly into your client workspace. This replaces a manual copy-paste step that currently takes 20 minutes per client per week.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">1 hour</span>
+    <div>
+      <div class="try-action">Benchmark GPT-5.5 vs. Sonnet 4.6 on your highest-stakes report template</div>
+      <div class="try-why">GPT-5.5's 52.5% hallucination reduction on legal, medical, and financial prompts is a real number — but it needs to be verified against your specific templates. Run 10 outputs side-by-side on the most fact-dense section of a client deliverable.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">30 min</span>
+    <div>
+      <div class="try-action">Prototype a Notion Worker for your BigQuery pull</div>
+      <div class="try-why">Notion Workers is now GA. Deploy a lightweight script that pulls last week's brand performance data from BigQuery and writes structured rows into the client's Notion database. Eliminates the external automation layer currently sitting between the two systems.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">half day</span>
+    <div>
+      <div class="try-action">Set up Anthropic's no-code MCP connector beta for a client's Google Workspace</div>
+      <div class="try-why">The new MCP connector beta connects Claude to remote MCP servers via configuration only — no client code required. Connecting a client's Google Drive and Calendar should now take under an hour. Test the full onboarding time for one client and document it as a repeatable playbook.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">this sprint</span>
+    <div>
+      <div class="try-action">Build a one-page "execution gap" proof using the FTI PE AI Radar data</div>
+      <div class="try-why">The FTI finding — 95% of PE portfolio AI pilots fail to reach production — is the single most useful external data point for a new business conversation with a fund's operating partner. Synthesise it with your own delivery data into a one-pager this week while the report is fresh in the market.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WATCHLIST -->
+<div class="watchlist" id="watchlist">
+  <h3>▲ Watch Next Week</h3>
+  <div class="watchlist-item"><span class="bullet">■</span><span>OpenAI Deployment Company regulatory clearance — Tomoro acquisition subject to approval; watch for close announcement that confirms the 150 FDEs are live and competing</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Notion Workers GA adoption — first production case studies expected in the week of May 25; track whether CPG/brand teams appear as early adopters or if it skews to pure SaaS</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>GPT-5.5-Cyber limited preview expansion — watch for broader access announcement; directly relevant to any client with security or compliance workflows on the roadmap</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Anthropic Code with Claude 2026 conference — dates TBC; expect MCP developer tooling updates and potential Claude Opus 4.7 production rollout details</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>FTI PE AI Radar follow-up coverage — operating partner conversations about the "execution gap" finding are already circulating on LinkedIn; first fund announcements of AI portfolio ops programs expected before end of May</span></div>
+</div>
+
+<!-- COMMANDS -->
+<div class="commands-section" id="commands">
+  <h3>▲ Commands Worth Knowing</h3>
+  <div class="command-item">
+    <span class="command-label">/doctor</span>
+    <span class="command-desc">Run Claude Code's environment health check — verifies API keys, MCP server connections, and tool permissions in one pass.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">/mcp</span>
+    <span class="command-desc">List all connected MCP servers, their status, and available tools. Start here when a connector stops responding.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">gh run watch</span>
+    <span class="command-desc">Stream live output from a GitHub Actions workflow run in your terminal — no need to reload the browser.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">/memory</span>
+    <span class="command-desc">View and edit Claude's persistent memory for the current project — useful for updating client context between sessions.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">bq query</span>
+    <span class="command-desc">Run a BigQuery SQL query from the CLI with --use_legacy_sql=false. Pipe output directly into Claude for instant analysis.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">/permissions</span>
+    <span class="command-desc">Audit which tools Claude Code is allowed to call without asking. Tighten or expand the allowlist before a client session.</span>
+  </div>
+</div>
+
+<!-- ANALYST NOTE -->
+<div class="analyst-note" id="analyst">
+  <h3>▲ Analyst Note</h3>
+  <p>The interesting thing about a $4B consulting JV is that it confirms the thesis while threatening to commoditise it. When the largest AI lab in the world decides the future of enterprise AI is small embedded pods — not licences, not dashboards, not transformation programs — that is a structural admission. The pod model works. The question is whether it scales. Large organisations are structurally incapable of moving at boutique speed. The incentive structures are wrong, the approval chains are too long, and the institutional memory is too distributed. The FTI data makes the same point from a different angle: nearly every PE portfolio AI pilot fails to reach production. Not because the technology is wrong. Because the organisation around it is. The firms that will win are the ones already in production — not the ones announcing it. The gap between those two groups is compounding every week.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="date-label">Generated May 18, 2026</span>
+  <span class="brand">Status Quo</span>
+</div>
+
+</div><!-- /.main-content -->
+
+</body>
+</html>
