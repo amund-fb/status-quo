@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Quo — July 13, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Newsreader', Georgia, serif; background: #000; color: #fff; margin: 0; padding: 0 0 0 200px; min-height: 100vh; }
+  .main-content { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+  .label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+  .heading { font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; }
+  .muted { color: #888; }
+  .green { color: #3AE49D; }
+  .yellow { color: #FFF766; }
+  .twitter-blue { color: #1DA1F2; }
+
+  /* Header */
+  .header { padding-top: 40px; padding-bottom: 24px; margin-bottom: 32px; border-bottom: 1px solid #2a2a2a; }
+  .header h1 { font-size: 32px; margin-top: 8px; }
+  .header .date { font-family: 'DM Sans', sans-serif; font-size: 11px; color: #888; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
+
+  /* Summary */
+  .summary { margin-bottom: 36px; }
+  .summary h2 { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; text-transform: uppercase; }
+  .summary p { font-size: 15px; line-height: 1.7; color: #ddd; padding-left: 16px; border-left: 2px solid #3AE49D; }
+  .summary ul { list-style: none; margin-bottom: 16px; }
+  .summary li { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: #fff; padding: 6px 0; display: flex; align-items: baseline; gap: 10px; }
+  .summary li .bullet { color: #3AE49D; font-size: 8px; flex-shrink: 0; }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #2a2a2a; }
+  .section-icon { font-size: 10px; font-weight: 700; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 2px; }
+  .section-title { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* Card */
+  .card { padding: 20px 24px; border-radius: 10px; background: #141414; border: 1px solid #2a2a2a; margin-bottom: 16px; }
+  .card h4 { font-size: 15px; font-weight: 600; margin-bottom: 10px; font-family: 'Newsreader', Georgia, serif; }
+  .card p { font-size: 14px; line-height: 1.7; color: #e0e0e0; margin-bottom: 14px; }
+  .card .relevance { font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 10px 14px; border-radius: 8px; line-height: 1.5; font-weight: 500; }
+  .relevance-green { background: rgba(58,228,157,0.04); color: #3AE49D; border-left: 2px solid rgba(58,228,157,0.25); }
+  .relevance-yellow { background: rgba(255,247,102,0.04); color: #FFF766; border-left: 2px solid rgba(255,247,102,0.25); }
+  .relevance-white { background: rgba(255,255,255,0.04); color: #fff; border-left: 2px solid rgba(255,255,255,0.25); }
+
+  /* Sources */
+  .sources { margin-top: 10px; font-family: 'DM Sans', sans-serif; font-size: 11px; color: #888; line-height: 1.6; }
+  .sources .sources-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .sources a { color: #888; text-decoration: underline; text-underline-offset: 2px; }
+  .sources a:hover { color: #aaa; }
+
+  /* Twitter Signals */
+  .twitter-section { margin-bottom: 40px; }
+  .twitter-group-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; margin-top: 16px; }
+  .twitter-card { display: block; text-decoration: none; padding: 14px 18px; border-radius: 10px; background: #141414; border: 1px solid #2a2a2a; margin-bottom: 8px; }
+  .twitter-card:hover { border-color: #1DA1F2; }
+  .twitter-handle { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; color: #1DA1F2; }
+  .twitter-engagement { font-family: 'DM Sans', sans-serif; font-size: 10px; padding: 2px 8px; border-radius: 6px; background: rgba(29,161,242,0.08); color: #1DA1F2; font-weight: 600; margin-left: 10px; }
+  .twitter-insight { font-size: 14px; line-height: 1.6; color: #e0e0e0; margin-top: 6px; }
+
+  /* Things to Try */
+  .try-section { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #3AE49D; }
+  .try-section h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #3AE49D; }
+  .try-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .try-effort { font-family: 'DM Sans', sans-serif; font-size: 10px; padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(58,228,157,0.3); color: #3AE49D; font-weight: 600; flex-shrink: 0; margin-top: 2px; white-space: nowrap; width: 76px; text-align: center; box-sizing: border-box; }
+  .try-action { font-size: 14px; color: #fff; line-height: 1.5; }
+  .try-why { font-size: 13px; color: #bbb; line-height: 1.5; margin-top: 2px; }
+
+  /* Watchlist */
+  .watchlist { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #FFF766; }
+  .watchlist h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #FFF766; }
+  .watchlist-item { font-size: 14px; line-height: 1.6; color: #e0e0e0; display: flex; gap: 12px; align-items: baseline; margin-bottom: 10px; }
+  .watchlist-item .bullet { color: #FFF766; flex-shrink: 0; font-size: 8px; }
+
+  /* Commands */
+  .commands-section { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #141414; border: 1px solid #2a2a2a; border-top: 2px solid #fff; }
+  .commands-section h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; color: #888; }
+  .command-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .command-label { font-family: 'DM Sans', sans-serif; font-size: 11px; padding: 5px 10px; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid #2a2a2a; color: #fff; font-weight: 600; flex-shrink: 0; font-variant-ligatures: none; letter-spacing: 0.02em; white-space: nowrap; width: 90px; text-align: center; box-sizing: border-box; }
+  .command-desc { font-size: 13px; color: #aaa; line-height: 1.5; }
+
+  /* Analyst note */
+  .analyst-note { padding: 22px 24px; border-radius: 10px; margin-bottom: 36px; background: #1a1a1a; border: 1px solid #2a2a2a; }
+  .analyst-note h3 { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; color: #3AE49D; }
+  .analyst-note p { font-size: 15px; line-height: 1.75; color: #e0e0e0; font-style: italic; }
+
+  /* Footer */
+  .footer { border-top: 1px solid #2a2a2a; padding: 20px 0 40px; display: flex; justify-content: space-between; align-items: center; }
+  .footer .date-label { font-family: 'DM Sans', sans-serif; font-size: 10px; color: #888; letter-spacing: 0.08em; text-transform: uppercase; }
+  .footer .brand { font-family: 'DM Sans', sans-serif; font-size: 10px; color: #3AE49D; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+
+  /* Sidebar Navigation */
+  .sidebar-nav { position: fixed; left: 0; top: 0; width: 200px; height: 100vh; background: #0a0a0a; border-right: 1px solid #1a1a1a; padding: 40px 0 40px 20px; display: flex; flex-direction: column; gap: 2px; z-index: 100; overflow-y: auto; }
+  .sidebar-brand { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AE49D; margin-bottom: 24px; text-decoration: none; display: block; }
+  .sidebar-nav a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; color: #555; text-decoration: none; padding: 8px 14px; border-radius: 4px; display: flex; align-items: center; gap: 8px; transition: color 0.15s, background 0.15s; line-height: 1.3; }
+  .sidebar-nav a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+  .sidebar-nav a .nav-icon { font-size: 8px; flex-shrink: 0; width: 14px; text-align: center; }
+  .sidebar-nav a.nav-green .nav-icon { color: #3AE49D; }
+  .sidebar-nav a.nav-yellow .nav-icon { color: #FFF766; }
+  .sidebar-nav a.nav-white .nav-icon { color: #fff; }
+  .sidebar-nav a.nav-blue .nav-icon { color: #1DA1F2; }
+  .sidebar-divider { height: 1px; background: #1a1a1a; margin: 10px 14px 10px 0; }
+
+  @media (max-width: 960px) {
+    .sidebar-nav { display: none; }
+    body { padding-left: 0; }
+  }
+
+  @media print {
+    .sidebar-nav { display: none; }
+    body { padding-left: 0; }
+    body { background: #fff; color: #000; }
+    .card, .try-section, .watchlist, .twitter-card { border-color: #ddd; background: #f9f9f9; }
+    .card p, .summary p, .analyst-note p, .watchlist-item, .twitter-insight, .try-why { color: #333; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<nav class="sidebar-nav">
+  <a href="#top" class="sidebar-brand">Status Quo</a>
+  <a href="#summary" class="nav-green"><span class="nav-icon">▲</span>Summary</a>
+  <a href="#models" class="nav-green"><span class="nav-icon">■</span>Models & Benchmarks</a>
+  <a href="#stack" class="nav-yellow"><span class="nav-icon">■</span>Stack & MCP</a>
+  <a href="#consultancy" class="nav-white"><span class="nav-icon">■</span>Consultancy Plays</a>
+  <a href="#industry" class="nav-green"><span class="nav-icon">■</span>Industry & Pricing</a>
+  <div class="sidebar-divider"></div>
+  <a href="#signals" class="nav-blue"><span class="nav-icon">■</span>Signals from X</a>
+  <a href="#try" class="nav-green"><span class="nav-icon">▲</span>Things to Try</a>
+  <a href="#watchlist" class="nav-yellow"><span class="nav-icon">▲</span>Watchlist</a>
+  <a href="#commands" class="nav-white"><span class="nav-icon">▲</span>Commands</a>
+  <a href="#analyst" class="nav-green"><span class="nav-icon">▲</span>Analyst Note</a>
+</nav>
+
+<div class="main-content">
+
+<!-- HEADER -->
+<div class="header" id="top">
+  <div class="label green">Status Quo</div>
+  <h1 class="heading">STATUS QUO</h1>
+  <div class="date">Monday, July 13, 2026</div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary" id="summary">
+  <h2>GPT-5.6 vs. Cowork: The Productivity Layer War Is On</h2>
+  <ul>
+    <li><span class="bullet">■</span>OpenAI launches GPT-5.6 (Sol/Terra/Luna) and ChatGPT Work — a direct shot at Claude Cowork</li>
+    <li><span class="bullet">■</span>Anthropic moves Cowork to the cloud and ships centralized Okta MCP auth for Enterprise</li>
+    <li><span class="bullet">■</span>Slack's MCP client hits GA with 20+ app integrations — 25× increase in agent tool calls</li>
+    <li><span class="bullet">■</span>71% of CPG leaders now running AI; PE firms rank it #1 value creation priority</li>
+  </ul>
+  <p>The frontier model race split into two battles this week: the model tier (GPT-5.6 Sol vs. Claude Fable 5 vs. Grok 4.5) and the productivity layer (ChatGPT Work vs. Claude Cowork). OpenAI launched GPT-5.6 on July 9 — delayed four weeks at the US government's request — while Anthropic countered by moving Cowork to the cloud and locking in enterprise MCP auth via Okta. The stack question is no longer which model; it is which operating layer your clients will run on. That decision is being made this month.</p>
+</div>
+
+<!-- SECTION 1: Models & Benchmarks -->
+<div class="section" id="models">
+  <div class="section-header">
+    <span class="section-icon green" style="background:rgba(58,228,157,0.08);">■</span>
+    <span class="section-title green">Models &amp; Benchmarks</span>
+  </div>
+
+  <div class="card">
+    <h4>GPT-5.6 family launches July 9 — three tiers, government-cleared after four-week delay</h4>
+    <p>OpenAI released GPT-5.6 Sol, Terra, and Luna on July 9 after the Trump administration approved the rollout following national security review. Sol targets frontier reasoning and long-horizon agentic work at $5/$30 per million tokens. Terra delivers GPT-5.5-comparable performance at $2.50/$15 — half the cost. Luna is the speed-and-price option at $1/$6. ChatGPT Work, powered by GPT-5.6, launched simultaneously as a direct productivity layer competitor to Claude Cowork.</p>
+    <div class="relevance relevance-green">Terra is the immediate test candidate for our BigQuery-to-report pipeline. At $2.50/$15 with GPT-5.5-competitive capability, it undercuts Sonnet 5's promotional pricing ($2/$10) by a narrow margin while matching it on output quality. Run a side-by-side on a real client report before promotional pricing expires August 31.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://www.axios.com/2026/07/09/ai-openai-gpt-release" target="_blank" rel="noopener">Axios</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Claude Fable 5 returns July 1 as #1 on Artificial Analysis Intelligence Index after export-control lift</h4>
+    <p>Claude Fable 5 came back online July 1 after the US government lifted an export-control order that had kept it offline. Artificial Analysis ranks it first on its Intelligence Index, ahead of GPT-5.5 (#2), Claude Opus 4.8 (#3), and Grok 4.5 (#4). Claude Sonnet 5 is now the default model in Claude Code with a native 1M-token context window and promotional pricing of $2/$10 per million tokens through August 31.</p>
+    <div class="relevance relevance-green">Fable 5's return — and Sonnet 5's 1M context at promotional pricing — strengthens the Claude stack for long-context client work. The August 31 deadline on Sonnet 5 pricing creates an incentive to load-test it on context-heavy tasks (full brand audits, multi-quarter financial reviews) before costs normalize.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://code.claude.com/docs/en/whats-new" target="_blank" rel="noopener">Claude Code Docs</a>, <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">LLM Stats</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Gemini 3.5 Pro still absent; Google ships two image models while addressing agentic token waste</h4>
+    <p>Gemini 3.5 Pro missed its June launch date and remains unscheduled as of this week. Google released Gemini 3.1 Flash Image ($0.50 input/M) and Gemini 3 Pro Image ($2.00 input/M) on June 30 instead. The 3.5 Pro delay is attributed to Google addressing feedback on excessive token consumption in extended agentic tasks — a meaningful signal about the infrastructure costs of running long agentic loops.</p>
+    <div class="relevance relevance-green">The token-efficiency problem in agentic tasks is real across all providers. Before building new multi-step pipelines on any model, instrument token consumption per step. A workflow that burns 3× expected tokens in production erases margin. Gemini 3.5 Pro's agentic efficiency claims will be worth scrutinizing when it lands.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">LLM Stats</a>, <a href="https://aiflashreport.com/model-releases.html" target="_blank" rel="noopener">AI Flash Report</a></div>
+  </div>
+</div>
+
+<!-- SECTION 2: Stack & MCP Ecosystem -->
+<div class="section" id="stack">
+  <div class="section-header">
+    <span class="section-icon yellow" style="background:rgba(255,247,102,0.08);">■</span>
+    <span class="section-title yellow">Stack &amp; MCP Ecosystem</span>
+  </div>
+
+  <div class="card">
+    <h4>Anthropic moves Cowork to the cloud and adds centralized Okta MCP auth for Enterprise</h4>
+    <p>Anthropic made two enterprise-grade moves this week. Claude Cowork is now cloud-hosted, meaning agents run and complete tasks even when the user's device is offline. Separately, Anthropic introduced centralized MCP authorization for Team and Enterprise plans: admins provision MCP connectors org-wide through Okta, and connectors are live on first login — no per-user setup. Both features shipped the same week OpenAI launched ChatGPT Work.</p>
+    <div class="relevance relevance-yellow">The Okta MCP auth is the single most important enterprise shipping event this week. For any client running Google Workspace and Claude, this eliminates the per-user connector setup that has blocked adoption at the team level. Priority: map which clients are on Enterprise plans and trigger the Okta provisioning conversation.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.nbcnews.com/tech/tech-news/anthropic-will-make-claude-cowork-available-users-cloud-rcna353218" target="_blank" rel="noopener">NBC News</a>, <a href="https://releasebot.io/updates/anthropic/claude-code" target="_blank" rel="noopener">Releasebot</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Slack's MCP client hits GA — 25× increase in agent tool calls, 20+ app ecosystem</h4>
+    <p>Slackbot's MCP client is now generally available with a partner ecosystem of 20+ apps including Notion, Atlassian, Amplitude, Canva, Docusign, Linear, Miro, and Zoom. Slack reports a 25× increase in both Real-Time Search queries and MCP tool calls since the rollout began. Slack is positioning itself as the central hub through which enterprise AI agents access business context.</p>
+    <div class="relevance relevance-yellow">Slack as an MCP hub is architecturally significant for any client team already living in Slack. An agent that can pull Notion docs, query BigQuery results, and post formatted summaries — all via MCP through Slack — collapses what previously required four separate integrations. Test the Notion + Slack MCP combination on the weekly brand review workflow.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://slack.com/blog/news/slackbots-mcp-client" target="_blank" rel="noopener">Slack Blog</a>, <a href="https://slack.com/blog/news/mcp-real-time-search-api-now-available" target="_blank" rel="noopener">Slack MCP Blog</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Notion MCP usage 10×'s in a month; agents now read and write Office formats and Outlook</h4>
+    <p>Notion MCP usage increased 10× in the past 30 days. Two material capability additions: Notion Agents can now attach, read, and create PPTX, XLSX, DOCX, and PDF files — eliminating format conversion as a blocker. Notion Agents also connect to Outlook Mail and Calendar, enabling email triage, reply drafting, and meeting scheduling within the same agent context.</p>
+    <div class="relevance relevance-yellow">The Outlook + Notion Agents combination is directly relevant for clients on Microsoft 365 who use Notion as their operating system. An agent that reads incoming email, drafts a reply, and logs a follow-up in Notion without leaving the context window is a meaningful time save. Priority: test on a client who uses both platforms.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://developers.notion.com/guides/mcp/mcp-supported-tools" target="_blank" rel="noopener">Notion Docs</a>, <a href="https://releasebot.io/updates/notion" target="_blank" rel="noopener">Releasebot</a></div>
+  </div>
+</div>
+
+<!-- SECTION 3: AI-Native Consultancy Plays -->
+<div class="section" id="consultancy">
+  <div class="section-header">
+    <span class="section-icon" style="color:#fff; background:rgba(255,255,255,0.08);">■</span>
+    <span class="section-title" style="color:#fff;">AI-Native Consultancy Plays</span>
+  </div>
+
+  <div class="card">
+    <h4>Big-4 losing clients to AI-powered boutiques as mid-market consulting shrinks</h4>
+    <p>Reporting across consulting trade media this week confirms the structural shift: AI-native boutiques are winning mandates from large legacy firms by automating junior analyst work and delivering faster outcomes at lower cost. The mid-market consulting segment is expected to shrink significantly in the next two years, leaving only global-scale players and specialized niche boutiques. A new Claude Consulting Practice launched July 6, with a firm leveraging nearly a decade of digital transformation work to productize Claude deployments for enterprise clients.</p>
+    <div class="relevance relevance-white">The market is bifurcating now, not in two years. The window to establish specialist positioning — AI-native operating partner for consumer brands — is closing. The boutiques capturing market share are the ones with documented, replicable delivery methodology. A case study showing measurable client outcomes (inventory accuracy, forecast lift, time saved) is higher priority than any new tool build this month.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://futureofconsulting.ai/ai-leadership/2026-consultings-ai-revolution-update/" target="_blank" rel="noopener">Future of Consulting</a>, <a href="https://cabinco.com/best-ai-consulting-firms/" target="_blank" rel="noopener">Cabinco</a></div>
+  </div>
+
+  <div class="card">
+    <h4>Claude Science beta ships — Anthropic connects agents to scientific ecosystems via MCP</h4>
+    <p>Anthropic released Claude Science in beta on July 4, an app connecting Claude to scientific workflows through MCP and skills for genomics, proteomics, and cheminformatics pipelines. The product signals Anthropic's intent to move Claude from general assistant to domain-specific operating layer — a pattern directly applicable to commercial verticals like CPG analytics, supply chain, and financial modeling.</p>
+    <div class="relevance relevance-white">Claude Science is the proof-of-concept for what vertical AI-native consulting looks like at the infrastructure level. The same pattern — domain-specific MCP connectors, specialized skills, reproducible pipelines — applies to a consumer brand operating system. The build-vs.-buy question for clients is shifting: will they buy a vertical Claude instance, or will they need a partner to configure and operate it?</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.marktechpost.com/2026/07/04/anthropic-launches-claude-science-beta/" target="_blank" rel="noopener">MarkTechPost</a></div>
+  </div>
+
+  <div class="card">
+    <h4>$200B AI opportunity in tech services — BCG identifies operating model gap as the constraint</h4>
+    <p>BCG published a framework identifying a $200 billion opportunity in AI-enabled tech services, with the binding constraint being operating model transformation rather than model capability. Firms that can reconfigure how work is done — not just deploy AI tools on existing workflows — capture the value. The analysis distinguishes between firms that use AI for productivity and those that rebuild delivery around AI capabilities.</p>
+    <div class="relevance relevance-white">This is the market positioning argument in numbers. The $200B pool accrues to firms that transform operating models, not to tool resellers. The commercial case for a flat-fee AI operating partner — one that embeds into the client's workflow and rebuilds it, rather than licensing software — is the highest-value position in that BCG taxonomy. Use this framing in PE conversations where "AI strategy" means tool procurement.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.bcg.com/publications/2026/the-200-billion-dollar-ai-opportunity-in-tech-services" target="_blank" rel="noopener">BCG</a></div>
+  </div>
+</div>
+
+<!-- SECTION 4: Industry & Pricing Shifts -->
+<div class="section" id="industry">
+  <div class="section-header">
+    <span class="section-icon green" style="background:rgba(58,228,157,0.08);">■</span>
+    <span class="section-title green">Industry &amp; Pricing Shifts</span>
+  </div>
+
+  <div class="card">
+    <h4>71% of CPG leaders running AI; 69% report revenue increases — but "AI action gap" threatens laggards</h4>
+    <p>Keychain's 2026 CPG Intelligence Report finds 71% of consumer goods leaders have deployed AI applications, reporting average 69% revenue increases and 72% cost reductions through demand forecasting, trade promotion optimization, and supply chain automation. CPG manufacturers are simultaneously pulling back from aggressive expansion and investing in core operational infrastructure. The report explicitly frames the AI adoption gap as an existential threat — not a missed opportunity — for brands that have not restructured their data and operating models.</p>
+    <div class="relevance relevance-green">The gap between AI-ready and AI-unready CPG brands is now measurable in revenue and cost outcomes. For client conversations, lead with the 72% cost reduction data point on supply chain and the demand forecasting ROI — these are the use cases closest to the delivery model. The "action gap is existential" framing is the commercial urgency argument, not a scare tactic.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.prnewswire.com/news-releases/keychain-report-finds-ai-adoption-and-operational-investment-are-driving-the-next-phase-of-growth-in-cpg-manufacturing-302770141.html" target="_blank" rel="noopener">PR Newswire / Keychain</a>, <a href="https://www.bcg.com/publications/2026/how-cpg-retail-leaders-maximize-ai-roi" target="_blank" rel="noopener">BCG</a></div>
+  </div>
+
+  <div class="card">
+    <h4>65% of PE funds rank AI as top value creation priority; agentic AI identified as $6T value pool</h4>
+    <p>EY and McKinsey both published private equity AI analysis this week. 65% of PE funds now rank AI as a top-three priority for portfolio value creation. Higher interest rates and constrained exit markets have reduced the effectiveness of financial engineering, making operational AI the primary lever for EBITDA improvement. Agentic AI alone is estimated at a $6 trillion value pool — the largest individual category, ahead of vertical AI, horizontal AI, and industrial AI at roughly $3 trillion each.</p>
+    <div class="relevance relevance-green">PE operating partners who can credibly quantify AI-driven EBITDA improvements have a direct pitch. The $6T agentic AI number is the macro positioning; the deliverable is showing a portfolio company how a 3-month AI operating model engagement converts to a specific EBITDA line — in numbers, not frameworks. That's the commercial product.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.ey.com/en_us/insights/private-equity/us-private-equity-ai-insights" target="_blank" rel="noopener">EY</a>, <a href="https://www.mckinsey.com/capabilities/business-building/our-insights/beyond-productivity-how-ai-creates-value-in-private-equity" target="_blank" rel="noopener">McKinsey</a></div>
+  </div>
+
+  <div class="card">
+    <h4>X ships hosted MCP server at api.x.com/mcp — 200+ endpoints including full-archive search</h4>
+    <p>X launched a hosted remote MCP server at api.x.com/mcp on June 30, exposing 200+ X API endpoints including full-archive search, trend data, post interactions, bookmark management, and X Articles publishing. This is the first major social platform to offer native MCP access — no custom wrapper required. Any MCP-compatible client (Claude Code, Cursor, Claude Cowork) can now query X data directly in an agent context.</p>
+    <div class="relevance relevance-green">Real-time X trend data via MCP is a material upgrade for consumer brand intelligence work. A weekly agent that pulls trending topics in a brand's category, filters by engagement threshold, and outputs a formatted brief is now a one-hour build rather than a multi-day integration project. Add to the client intelligence stack immediately.</div>
+    <div class="sources"><span class="sources-label">Sources: </span><a href="https://www.leadwithai.co/article/chatgpt-work-is-here-openais-answer-to-claude-cowork" target="_blank" rel="noopener">Lead With AI</a></div>
+  </div>
+</div>
+
+<!-- TWITTER SIGNALS -->
+<div class="twitter-section" id="signals">
+  <div class="section-header">
+    <span class="section-icon twitter-blue" style="background:rgba(29,161,242,0.08);">■</span>
+    <span class="section-title twitter-blue">Signals from X</span>
+  </div>
+
+  <div class="twitter-group-label">Models &amp; Benchmarks</div>
+  <a class="twitter-card" href="https://x.com/carsonmarz/status/2074912196983685443" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@carsonmarz</span><span class="twitter-engagement">1,000+ likes</span></div>
+    <div class="twitter-insight">"Still true, July 2026." — An AI agents one-pager circulating widely this week, asserting that the structural logic of agentic AI deployment has not fundamentally changed despite the wave of new model releases. The contrarian read: new models get benchmarks, the underlying agent design principles stay the same.</div>
+  </a>
+  <a class="twitter-card" href="https://www.leadwithai.co/article/chatgpt-work-is-here-openais-answer-to-claude-cowork" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@various — ChatGPT Work vs. Cowork debate</span><span class="twitter-engagement">High engagement</span></div>
+    <div class="twitter-insight">The framing driving discussion: OpenAI's ChatGPT Work is "OpenAI's answer to Claude Cowork." Developer first-day reviews surfaced one consistent finding — GPT-5.6 Terra is not always better than Luna for coding tasks, complicating OpenAI's three-tier positioning narrative within hours of launch.</div>
+  </a>
+
+  <div class="twitter-group-label">AI Discourse &amp; Contrarian Takes</div>
+  <a class="twitter-card" href="https://x.com/georgejrjrjr/status/2017339941722747282" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@georgejrjrjr</span><span class="twitter-engagement">Widely shared</span></div>
+    <div class="twitter-insight">"Runaway AI discourse has been miscalibrated for a long time. The model is not the agent. The model is a neural computer that hosts agents." — A thread clarifying the distinction that most safety and hype discourse conflates, circulating again this week as new model launches dominated the news cycle.</div>
+  </a>
+  <a class="twitter-card" href="https://x.com/alliekmiller/status/2005749698037190818" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@alliekmiller</span><span class="twitter-engagement">High engagement</span></div>
+    <div class="twitter-insight">2026 AI prediction thread: "Context Engineering and Memory — the race to help AI remember you, your work, and your context" identified as the defining capability shift. The argument: model capability is largely commoditized; persistent memory and organizational context are the next differentiator.</div>
+  </a>
+
+  <div class="twitter-group-label">Developer &amp; Practitioner Debate</div>
+  <a class="twitter-card" href="https://x.com/lexfridman/status/2017735625227833850" target="_blank" rel="noopener">
+    <div><span class="twitter-handle">@lexfridman</span><span class="twitter-engagement">Widely shared</span></div>
+    <div class="twitter-insight">Extended AI state-of-the-world conversation circulating this week: scaling laws, closed vs. open LLMs, Claude Code and Cursor as practitioner tools, China vs. US competition, and training pipeline evolution. Referenced as "the most comprehensive 2026 AI landscape overview in one conversation" by developer communities.</div>
+  </a>
+
+  <p style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #888; line-height: 1.7; margin-top: 20px; padding: 14px 18px; background: #0d0d0d; border-radius: 8px; border-left: 2px solid rgba(29,161,242,0.2);">The dominant discourse this week split along two lines. On the model side: GPT-5.6's three-tier release generated immediate developer skepticism — Terra underperforming Luna on coding tasks suggests the tier segmentation is more pricing architecture than capability architecture. On the infrastructure side: the Cowork vs. ChatGPT Work framing dominated, with the consensus reading that the productivity layer — not the model underneath it — is where enterprise lock-in gets decided. The @alliekmiller context engineering thesis is gaining traction as the intellectual framework for why the productivity layer matters: persistent organizational memory is the durable advantage, and whoever controls the context window controls the workflow.</p>
+</div>
+
+<!-- THINGS TO TRY -->
+<div class="try-section" id="try">
+  <h3>▲ Things to Try This Week</h3>
+
+  <div class="try-item">
+    <span class="try-effort">30 min</span>
+    <div>
+      <div class="try-action">Connect api.x.com/mcp to Claude Code and run a live trend brief</div>
+      <div class="try-why">X's hosted MCP server exposes 200+ endpoints including full-archive search and trend data. Point Claude at a client category and generate a formatted trend brief in one session.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">30 min</span>
+    <div>
+      <div class="try-action">Run the weekly report pipeline on Claude Sonnet 5 before August 31 promotional pricing ends</div>
+      <div class="try-why">Sonnet 5 is $2/$10 per million tokens through August 31 — then normalizes. Load-test it on the longest client reports now while the pricing window is open.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">1 hour</span>
+    <div>
+      <div class="try-action">Provision Okta MCP auth for one client team and measure time-to-first-tool-call</div>
+      <div class="try-why">Anthropic's new centralized MCP auth via Okta eliminates per-user connector setup. The metric that matters: how long from provisioning to a new team member using their first MCP tool.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">1 hour</span>
+    <div>
+      <div class="try-action">Test Notion Agents on an Outlook inbox — triage, draft, and log in one session</div>
+      <div class="try-why">Notion Agents now connect to Outlook Mail and Calendar. Run it on a real inbox: triage incoming, draft a reply, create a Notion follow-up task. If it works end-to-end, this replaces a 20-minute manual routine.</div>
+    </div>
+  </div>
+
+  <div class="try-item">
+    <span class="try-effort">half day</span>
+    <div>
+      <div class="try-action">Build a Slack → Notion → BigQuery agent chain using the Slack MCP client</div>
+      <div class="try-why">Slack's MCP client is now GA with Notion and data tool integrations. A chain that pulls a weekly Slack thread, logs key decisions to Notion, and queries BigQuery for supporting data is a high-value client workflow that's now a configuration task, not a build.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WATCHLIST -->
+<div class="watchlist" id="watchlist">
+  <h3>▲ Watch Next Week</h3>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Gemini 3.5 Pro launch window — Google's delayed flagship is expected "in July." Watch for agentic token-efficiency data, which will determine whether it's viable for long-horizon workflows.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>GPT-5.6 Terra real-world coding benchmarks — first-day reviews showed Terra underperforming Luna on coding tasks. Independent evals due this week will clarify whether the tier segmentation holds under production conditions.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Claude Science beta feedback — first user reports from Anthropic's domain-specific science app will signal how quickly vertical Claude instances are gaining traction vs. generic Claude deployments.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Slack MCP ecosystem expansion — watch for new partners beyond the GA launch list (Amplitude, Atlassian, Notion, Linear). Any enterprise data connectors (Salesforce, SAP, NetSuite) would materially change the value proposition for PE portfolio deployments.</span></div>
+  <div class="watchlist-item"><span class="bullet">■</span><span>Sonnet 5 promotional pricing deadline — August 31 cutoff. Any client workflows not yet tested at scale should be prioritized this month while $2/$10 pricing holds.</span></div>
+</div>
+
+<!-- COMMANDS -->
+<div class="commands-section" id="commands">
+  <h3>▲ Commands Worth Knowing</h3>
+  <div class="command-item">
+    <span class="command-label">/deep-research</span>
+    <span class="command-desc">Fan out a multi-source research sweep with adversarial verification. Runs as a workflow — returns a cited report, not a summary.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">/code-review</span>
+    <span class="command-desc">Review the current diff for correctness, simplification, and efficiency. Pass --fix to apply findings directly to the working tree.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">/loop</span>
+    <span class="command-desc">Run a prompt or slash command on a recurring schedule (e.g. /loop 10m /review). Keeps a background task running without manual re-triggering.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">gh run watch</span>
+    <span class="command-desc">Stream a live GitHub Actions run in your terminal. Useful when you've pushed and want to watch CI without opening the browser.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">/security-review</span>
+    <span class="command-desc">Run a full security review on pending branch changes — covers OWASP top 10, injection risks, auth issues, and secrets exposure.</span>
+  </div>
+  <div class="command-item">
+    <span class="command-label">bq query</span>
+    <span class="command-desc">Run a BigQuery SQL query from the CLI: bq query --use_legacy_sql=false 'SELECT ...' — faster than the console for iterating on analytical queries.</span>
+  </div>
+</div>
+
+<!-- ANALYST NOTE -->
+<div class="analyst-note" id="analyst">
+  <h3>▲ Analyst Note</h3>
+  <p>The real battle this week was not between models. It was between operating layers. ChatGPT Work and Claude Cowork are not AI assistants. They are bids for the context window — the place where your organization's memory, workflow, and decisions live. Whoever owns that context owns the workflow. Whoever owns the workflow owns the relationship. The model underneath is almost irrelevant. This is why Anthropic shipped cloud-hosted Cowork and centralized Okta auth in the same week OpenAI launched GPT-5.6. They understand the game. The organizations that have not yet decided which operating layer to standardize on are making a consequential non-decision. That window closes as teams habituate and contexts accumulate. The switching cost is not a dollar figure — it is institutional memory that has been poured into one system and cannot be migrated without loss.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="date-label">Generated July 13, 2026</span>
+  <span class="brand">Status Quo</span>
+</div>
+
+</div><!-- /.main-content -->
+
+</body>
+</html>
